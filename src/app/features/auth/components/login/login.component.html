@@ -1,0 +1,30 @@
+<section class="login">
+
+    <div class="login__titles">
+        <h1>Login</h1>
+        <p>Welcome</p>
+    </div>
+
+    <form class="login__form" action="">
+        <app-input 
+            [name]="'username'" 
+            [ariaLabel]="'username'" 
+            [placeHolder]="'Username'" 
+            [icon]="'person'"
+            [size]="'large'" />
+
+        <app-input 
+            [name]="'username'" 
+            [ariaLabel]="'username'" 
+            [placeHolder]="'Password'" 
+            [icon]="'lock'"
+            [type]="'password'" 
+            [size]="'large'" />
+
+        <app-button 
+            [text]="'Login'" 
+            [ariaLabel]="'Login'" 
+            [size]="'xl'"/>
+    </form>
+
+</section>

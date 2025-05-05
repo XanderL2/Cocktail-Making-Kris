@@ -1,0 +1,37 @@
+@if (label) {
+    <label class="label" for="{{name}}">{{label}}</label>
+}
+
+
+<div class="inputContainer">
+
+    <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
+
+    @if (textArea) {
+
+        <textarea 
+            class="input" 
+            name="{{name}}" 
+            [ariaLabel]="ariaLabel"
+            [placeholder]="placeHolder" 
+            [attr.required]="required ? '' : null"
+            [(ngModel)]="value"
+            (ngModelChange)="emitValue()"
+        ></textarea>
+
+    } @else {
+
+        <input 
+            class="input" 
+            [ngClass]="{ 'input__large': size === 'large' }" 
+            name="{{name}}" 
+            [placeholder]="placeHolder" 
+            [attr.required]="required ? '' : null"
+            [(ngModel)]="value"
+            (ngModelChange)="emitValue()"
+            [type]="type"
+        >
+    }
+
+</div>
+

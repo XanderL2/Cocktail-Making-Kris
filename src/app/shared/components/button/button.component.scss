@@ -1,0 +1,51 @@
+@use '../../sass/theme' as *;
+@use '../../sass/transitions' as *;
+
+.btn {
+
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.5rem;
+    color: $dark;
+
+    //? Types:
+    &__primary { background-color: $skyblue; }
+
+    &__secondary {
+        background-color: $blue;
+        color: $dark;
+    }
+
+    &__danger { background-color: $red; }
+
+    &:disabled {
+        background-color: $dark;
+        color: rgb(207, 207, 207);
+    }
+
+    //? Sizes: 
+    &__sm {
+        padding: 0.3rem 0.5rem;
+    }
+
+    &__md {
+        padding: 0.3rem 1rem;
+    }
+
+    &__lg {
+        padding: 0.3rem 3.5rem;
+    }
+
+    &__xl {
+        padding: 0.3rem 9rem;
+    }
+
+
+    //? Pseudo:
+    &:hover { scale: 1.05}
+    &:active { scale: 1.1 }
+
+}
+
+

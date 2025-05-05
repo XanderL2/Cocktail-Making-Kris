@@ -1,0 +1,31 @@
+@use '../../sass/resposive' as *;
+@use '../../sass/generic' as *;
+
+.main {
+    background-image: url('/images/login.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@include screen(lg) {
+
+    .main {
+        padding: 4rem;
+        justify-content: start;
+    }
+}
+
+@include screen(xl) {
+
+    .main {
+        padding: 8rem;
+        @include flexContainerRow( start, start, 0)
+    }
+}

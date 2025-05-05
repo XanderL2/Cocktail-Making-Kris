@@ -1,0 +1,8 @@
+@mixin transitionScale($scale, $time: 0.5s){
+    transition: scale $time;
+    scale: $scale;
+}
+
+@mixin transitionAllDelay($time, $delay: 0.5s){
+    transition: all $time ease $delay;
+}

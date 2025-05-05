@@ -1,0 +1,6 @@
+<button 
+    (click)="onClick($event)" 
+    [ariaLabel]="ariaLabel" 
+    [disabled]="disabled ? !enableWhen: false" class="btn"
+    [ngClass]="['btn__' + buttonType, 'btn__' + size]"
+    >{{text}}</button>

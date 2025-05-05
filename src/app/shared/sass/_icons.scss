@@ -1,0 +1,40 @@
+//? Sizes:
+@mixin customScale($scale) {
+    scale: $scale;
+}
+
+//? Sizes:
+.icon-ultraLarge{
+    scale: 7;
+}
+.icon-large {
+    scale: 3;
+}
+
+.icon-medium {
+    scale: 2;
+}
+
+.icon-sm {
+    scale: 1;
+}
+
+.icon-xsm {
+    scale: 0.8;
+}
+
+
+
+//? Colors:
+.icon-reset {
+    color: unset;
+    fill: unset;
+}
+
+.icon-disabled {
+    color: gray;    
+}
+
+.icon-not-clickable {
+    pointer-events: none;
+}

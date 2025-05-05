@@ -1,0 +1,14 @@
+$breakpoints: (
+  sm: 640px,    // Pequeños dispositivos (móviles)
+  md: 768px,    // Dispositivos medianos (tabletas)
+  lg: 1024px,   // Dispositivos grandes (tabletas en orientación horizontal, laptops pequeños)
+  xl: 1280px,   // Pantallas más grandes (laptops, pantallas HD)
+  2xl: 1536px   // Pantallas extra grandes (pantallas 4K, monitores grandes)
+);
+
+
+@mixin screen($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
