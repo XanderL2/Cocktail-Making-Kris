@@ -13,16 +13,7 @@
 }
 
 
-
 @include screen(lg) {
-
-    .main {
-        padding: 4rem;
-        justify-content: start;
-    }
-}
-
-@include screen(xl) {
 
     .main {
         padding: 8rem;
