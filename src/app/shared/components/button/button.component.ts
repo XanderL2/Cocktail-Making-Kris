@@ -9,9 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
 
-  @Input({ required: true }) text: string = '';
   @Input({required: true}) ariaLabel: string = "button"
-
   @Input() buttonType: 'primary' | 'secondary' | 'danger' = 'primary';
   @Input() onClick: (event: Event) => void = () => console.log("Button clicked!"); 
 

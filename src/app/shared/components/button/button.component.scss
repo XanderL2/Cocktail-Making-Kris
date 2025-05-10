@@ -10,11 +10,14 @@
     color: $dark;
 
     //? Types:
-    &__primary { background-color: $skyblue; }
+    &__primary { 
+        background-color: $darkBlue; 
+        color: white;
+    }
+
 
     &__secondary {
         background-color: $blue;
-        color: $dark;
     }
 
     &__danger { background-color: $red; }
@@ -38,7 +41,8 @@
     }
 
     &__xl {
-        padding: 0.3rem 9rem;
+        padding: 0.3rem;
+        width: 100%;
     }
 
 

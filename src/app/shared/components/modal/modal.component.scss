@@ -1,0 +1,19 @@
+.modal {
+
+    position: absolute; 
+    background-color: red;  
+    z-index: 2;
+    left: 3rem;
+    top: 0%;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    opacity: 0;
+
+    &__content {
+        padding: 1rem;
+    }
+
+    &__visible {
+        opacity: 1;
+    }
+}

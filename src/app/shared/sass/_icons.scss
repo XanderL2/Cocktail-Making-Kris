@@ -1,40 +1,57 @@
+@use '../sass/theme' as *;
+@use '../../shared/sass/transitions' as *;
+
+
 //? Sizes:
 @mixin customScale($scale) {
     scale: $scale;
 }
 
-//? Sizes:
-.icon-ultraLarge{
-    scale: 7;
-}
-.icon-large {
-    scale: 3;
+.icon {
+
+    //? Sizes:
+    &-ultraLarge {
+        scale: 7;
+    }
+
+    &-large {
+        scale: 3;
+    }
+
+    &-medium {
+        scale: 2;
+    }
+
+    &-sm {
+        scale: 1.2;
+    }
+
+    &-xsm {
+        scale: 0.8;
+    }
+
+    //? Colors:
+    &-reset {
+        color: unset;
+        fill: unset;
+    }
+
+    &-disabled {
+        color: gray;    
+    }
+
+    //? Specials:
+    &-pointer {
+        cursor: pointer;
+    }
+
+    &-not-clickable {
+        pointer-events: none;
+    }
+
+    &:hover {
+        @include transitionScale(1.1, 0.5s);        
+    }
+
 }
 
-.icon-medium {
-    scale: 2;
-}
-
-.icon-sm {
-    scale: 1;
-}
-
-.icon-xsm {
-    scale: 0.8;
-}
-
-
-
-//? Colors:
-.icon-reset {
-    color: unset;
-    fill: unset;
-}
-
-.icon-disabled {
-    color: gray;    
-}
-
-.icon-not-clickable {
-    pointer-events: none;
-}

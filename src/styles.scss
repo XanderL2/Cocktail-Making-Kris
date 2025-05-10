@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @use './app/shared/sass/theme' as *;
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 html {
   @include mat.theme((
@@ -27,7 +28,7 @@ html {
   font-family: VT323;
   text-decoration: none;
   scroll-behavior: smooth;
-  color: $skyblue;
+  color: $darkBlue;
   // -webkit-tap-highlight-color: transparent;
 
 }

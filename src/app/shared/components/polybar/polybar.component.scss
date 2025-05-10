@@ -1,0 +1,31 @@
+@use '../../sass/generic' as *;
+@use '../../sass/theme' as *;
+
+.polybar {
+
+    height: 85vh;
+    width: 3.2rem;
+    border-radius: 10px;
+    background-color: $ultraDarkBlue;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-rows: 5%;
+
+    &__profileContainer {
+
+        width: 100%;
+        border-radius: 100%;
+        background-color: white;
+        aspect-ratio: 1 / 1;
+        background-color: $darkGray;
+        cursor: pointer;
+        position: relative;
+        @include flexContainerRow();
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

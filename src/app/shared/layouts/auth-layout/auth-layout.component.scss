@@ -2,21 +2,11 @@
 @use '../../sass/generic' as *;
 
 .main {
-    background-image: url('/images/login.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+
+    @include backgroundImageCover('/images/login.gif');
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-
-@include screen(lg) {
-
-    .main {
-        padding: 8rem;
-        @include flexContainerRow( start, start, 0)
-    }
 }

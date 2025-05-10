@@ -1,0 +1,22 @@
+<aside class="polybar">
+
+    <div class="polybar__profileContainer" (click)="onClickProfile()">
+
+        @if(profilePhoto){
+            <img class="polybar__profileContainer--img" [src]="profilePhoto" alt="Profile Photo">
+
+        } @else {
+            <mat-icon svgIcon="arch"></mat-icon>
+        }    
+
+        <app-modal [showModal]="showProfile">
+            <ng-content select=".modalProfile"></ng-content>
+        </app-modal>
+
+    </div>
+
+    <ng-content select=".menus"></ng-content>
+    <ng-content select=".nav"></ng-content>
+
+</aside>
+

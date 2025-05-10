@@ -12,3 +12,11 @@
     align-items: $align;
     gap: $gap;
 }
+
+@mixin backgroundImageCover($imageUrl){
+
+    background-image: url($imageUrl);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
