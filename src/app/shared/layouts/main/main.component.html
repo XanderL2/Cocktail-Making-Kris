@@ -1,34 +1,43 @@
 <div class="main">
 
-    <app-polybar>
+    <app-polybar [showProfile]="showProfile" [onClickProfile]="onClickProfile">
 
         <div class="modalProfile">
             <app-profile [user]="user"/>
         </div>
 
         <div class="menus">
-            <div class="menus__wrapper">
-                <mat-icon svgIcon="search" class="icon icon-pointer icon-sm"></mat-icon>
-                <!-- <app-modal>
-                    <h1>Kristofatico</h1>
-                </app-modal> -->
 
+            <div class="menus__wrapper">
+                <button (click)="onClickSearch()" [ariaLabel]="'search'">
+                    <mat-icon svgIcon="search" class="icon icon-pointer icon-sm"></mat-icon>
+                </button>
+                <app-modal [showModal]="showSearchMenu">
+                    <app-searcher [InputName]="'Search Cocktail'" [icon]="'explorer'" SearchTitle="Search your cocktail:">
+                        <app-button [ariaLabel]="'search'" [size]="'xl'"  [buttonType]="'secondary'">Search</app-button>   
+                        <app-button [ariaLabel]="'search'" [size]="'xl'" [onClick]="onApplySearchFilter" >Apply Filters</app-button>   
+                    </app-searcher>
+                </app-modal>
             </div>
+
 
              <div class="menus__wrapper">
-                <mat-icon svgIcon="filters" class="icon icon-pointer"></mat-icon>
-                <!-- <app-modal>
+                <button (click)="onClickFilter()">
+                    <mat-icon svgIcon="filters" class="icon icon-pointer"></mat-icon>
+                </button>
+                <app-modal [showModal]="showFilterMenu">
                     <h1>Kristofatico</h1>
-                </app-modal> -->
+                </app-modal>
 
             </div>
+
             <div class="menus__wrapper">
                 <mat-icon svgIcon="music" class="icon icon-pointer icon-sm"></mat-icon>
                 <!-- <app-modal>
                     <h1>Kristofatico</h1>
                 </app-modal> -->
-
             </div>
+
         </div>
 
         <div class="nav">

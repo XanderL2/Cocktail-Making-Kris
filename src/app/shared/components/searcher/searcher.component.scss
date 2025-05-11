@@ -1,0 +1,19 @@
+@use '../../sass/generic' as *; 
+@use '../../sass/theme' as *; 
+
+h4 {
+    color: $lightGray;
+}
+
+.searcher {
+
+    width: 100%;
+    @include flexContainerColumn(center, unset, 1rem);
+
+    &__main {
+        @include flexContainerColumn(center, unset, 1rem);
+    }
+
+
+
+}

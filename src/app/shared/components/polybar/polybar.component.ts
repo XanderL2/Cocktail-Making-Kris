@@ -12,16 +12,9 @@ import { IconsService } from '../../../core/services/icons/icons.service';
 export class PolybarComponent {
 
   @Input() profilePhoto: string = "";
+  @Input({ required: true }) showProfile!: boolean;
+  @Input({ required: true }) onClickProfile!: () => void;
 
-  public showProfile: boolean = false;
   private iconService: IconsService = inject(IconsService);
-
-
-  public onClickProfile() : void {
-    this.showProfile = !this.showProfile;
-  }
-
-
-  
 
 }
