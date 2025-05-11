@@ -1,6 +1,35 @@
 <div class="profile">
 
-    <h1>kRIS</h1>
+    <div class="profile__clock">
+        <h1 class="profile__clock--time">{{timeNow}}</h1>
+    </div>
 
+    <div class="profile__user">
+        <div class="profile__user--container">
+
+            <div class="profile__user--container__photo">
+                <img class="profile__user--container__photo-img" [src]="user.profilePhoto" alt="userImage">
+            </div>
+
+            <div class="profile__user--container__names">
+                <h4>{{user.username}}</h4>
+                <p>{{'@' + user.username}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile__bio">
+        <p>I use arch btw 🤓 🤑</p>
+    </div>
+
+    <div class="profile__updates">
+        <mat-icon class="icon icon-sm icon-green">verified</mat-icon>
+        <p>Updates 4</p>
+    </div>
+
+    <div class="profile__system">
+        <mat-icon svgIcon="arch" class="icon-large"></mat-icon>
+        <p>Kris OS</p>
+    </div>
 
 </div>

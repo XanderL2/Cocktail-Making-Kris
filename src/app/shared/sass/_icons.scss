@@ -40,6 +40,10 @@
         color: gray;    
     }
 
+    &-green {
+        color: $green;
+    }
+
     //? Specials:
     &-pointer {
         cursor: pointer;

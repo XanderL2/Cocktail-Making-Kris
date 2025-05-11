@@ -14,7 +14,6 @@ export class PolybarComponent {
   @Input() profilePhoto: string = "";
 
   public showProfile: boolean = false;
-
   private iconService: IconsService = inject(IconsService);
 
 
