@@ -26,16 +26,20 @@
                     <mat-icon svgIcon="filters" class="icon icon-pointer"></mat-icon>
                 </button>
                 <app-modal [showModal]="showFilterMenu">
-                    <h1>Kristofatico</h1>
+                    <h1>Filter</h1>
                 </app-modal>
 
             </div>
 
             <div class="menus__wrapper">
-                <mat-icon svgIcon="music" class="icon icon-pointer icon-sm"></mat-icon>
-                <!-- <app-modal>
-                    <h1>Kristofatico</h1>
-                </app-modal> -->
+                <button (click)="onClickMusicPlayer()">
+                    <mat-icon svgIcon="music" class="icon icon-pointer icon-sm"></mat-icon>
+                </button>
+
+                <app-modal [showModal]="showMusicPlayer">
+                    <app-music-player [Songs]="Songs"></app-music-player>
+                </app-modal>
+
             </div>
 
         </div>

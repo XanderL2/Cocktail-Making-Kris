@@ -1,0 +1,39 @@
+<div class="musicPlayer">
+
+    <div class="musicPlayer__song">
+        <img class="musicPlayer__song--image" [src]="CurrentSong.cover" alt="Song Cover">
+
+        <audio [src]="CurrentSong.songUrl" #audio (timeupdate)="onProgress()" (loadedmetadata)="onLoadSrc()"></audio>
+
+        <div class="musicPlayer__song--info">
+            <div>
+                <h4>{{CurrentSong.name}}</h4>
+                <p>{{CurrentSong.artist}}</p>
+            </div>
+
+            <div class="musicPlayer__song--info__icon">
+                <mat-icon 
+                    [ngClass]="{ 'musicPlayer__song--info__icon--playing': isPlaying }" 
+                    svgIcon="music-circle"></mat-icon>
+            </div>
+
+
+            <div class="musicPlayer__song--info__bar" (click)="onClickBar($event)" #bar>
+                <div class="musicPlayer__song--info__bar--fill" #progressBar></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="musicPlayer__controls">
+        <button aria-label="skip previous" (click)="previousSong()">
+            <mat-icon class="icon icon-sm icon-lightGray">skip_previous</mat-icon>
+        </button>
+        <button aria-label="play and pause" (click)="onPlaying()">
+            <mat-icon class="icon icon-sm icon-lightGray" >{{ isPlaying ? 'pause' : 'play_arrow'}}</mat-icon>
+        </button>
+        <button aria-label="skip next" (click)="nextSong()">
+            <mat-icon class="icon icon-sm icon-lightGray" >skip_next</mat-icon>
+        </button>
+    </div>
+</div>

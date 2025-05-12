@@ -6,18 +6,27 @@ import { ProfileComponent } from "../../../features/users/components/profile/pro
 import { User } from '../../../features/users/models/User';
 import { SearcherComponent } from "../../components/searcher/searcher.component";
 import { ButtonComponent } from "../../components/button/button.component";
+import { MusicPlayerComponent } from "../../components/music-player/music-player.component";
+import { Song } from '../../components/music-player/models/Song';
+import { Songs } from '../../components/music-player/models/Songs';
 
 @Component({
   selector: 'app-main',
-  imports: [PolybarComponent, MatIconModule, ModalComponent, ProfileComponent, SearcherComponent, ButtonComponent],
+  imports: [PolybarComponent, MatIconModule, ModalComponent, ProfileComponent, SearcherComponent, ButtonComponent, MusicPlayerComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
 
+  //? Properties
   public showProfile: boolean = false;
+
   public showSearchMenu: boolean = false;
+
   public showFilterMenu: boolean = false;
+
+  public Songs: Song[] = Songs;
+  public showMusicPlayer: boolean = false;
 
   public user: User = {
     profilePhoto: 'https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic_1468962.webp?w=1600&h=900',
@@ -25,12 +34,8 @@ export class MainComponent {
   }
 
 
-  public onApplySearchFilter = (e: Event) : void => {
-    e.preventDefault();
-    this.showSearchMenu = false;
-    this.showFilterMenu = true;
-  }
 
+  //? Polybar Buttons Handlers
   public onClickProfile = (): void => {
     let prevStatusProfile = this.showProfile;
     this.closeAllMenus();  
@@ -49,9 +54,30 @@ export class MainComponent {
     this.showFilterMenu = !prevFilterStatus;
   }
 
+  public onClickMusicPlayer() : void{
+    let prevMusicPlayerStatus= this.showMusicPlayer;
+    this.closeAllMenus();  
+    this.showMusicPlayer = !prevMusicPlayerStatus;
+  }
+
+ 
+
+  public onApplySearchFilter = (e: Event) : void => {
+    e.preventDefault();
+    this.showSearchMenu = false;
+    this.showFilterMenu = true;
+  }
+
+
+
+
+
+  //? Methods
   private closeAllMenus() : void {
     this.showProfile = false;
     this.showSearchMenu = false; 
     this.showFilterMenu = false; 
+    this.showMusicPlayer = false; 
   }
+
 }

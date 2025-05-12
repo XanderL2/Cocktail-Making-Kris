@@ -3,10 +3,6 @@
 @use '../../../../shared/sass/icons' as *;
 
 
-h4 {
-    color: $lightGray;
-}
-
 p {
     color: $lightGray;
 }
@@ -64,7 +60,7 @@ p {
 
             &__names {
                 color: $lightGray;
-                max-width: 150px;
+                max-width: 200px;
                 overflow: scroll;
                 text-overflow: ellipsis;
                 white-space: nowrap;
