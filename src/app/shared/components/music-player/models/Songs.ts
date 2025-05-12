@@ -5,7 +5,7 @@ export const Songs: Song[] = [
     {
         name: "Every Day Is Night",
         artist: "Vallhalla",
-        cover: "/music/every-day/every-day.jpg",
+        cover: "/music/every-day/every-day.webp",
         songUrl: "/music/every-day/EveryDay.mp3"
     },
 
