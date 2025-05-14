@@ -3,7 +3,13 @@
     <div class="musicPlayer__song">
         <img class="musicPlayer__song--image" [src]="CurrentSong.cover" alt="Song Cover">
 
-        <audio [src]="CurrentSong.songUrl" #audio (timeupdate)="onProgress()" (loadedmetadata)="onLoadSrc()"></audio>
+        <audio 
+            [src]="CurrentSong.songUrl" 
+            #audio 
+            (timeupdate)="onProgress()" 
+            (loadedmetadata)="onLoadSrc()"
+            (ended)="onEndSong()"
+        ></audio>
 
         <div class="musicPlayer__song--info">
             <div>

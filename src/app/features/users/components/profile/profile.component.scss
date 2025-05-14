@@ -21,11 +21,17 @@ p {
 
         grid-row: 1;
         grid-column: 1 /span 2;
+        justify-self: center;
 
         @include flexContainerRow();
 
         &--time {
             color: $lightGray;
+
+            &__separator {
+                color: $pink;
+            }
+
         }
     }
 

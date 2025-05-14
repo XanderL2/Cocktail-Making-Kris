@@ -1,16 +1,17 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { User } from '../../models/User';
 import { MatIconModule } from '@angular/material/icon';
+import { ZeroIntPipe } from '../../../../shared/pipes/zero-int.pipe';
 
 @Component({
   selector: 'app-profile',
-  imports: [MatIconModule],
+  imports: [MatIconModule, ZeroIntPipe],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent implements OnInit, OnDestroy {
 
-  public timeNow: string = "";
+  public timeNow: Date = new Date();
   private interval: any
   @Input({ required: true }) user!: User;
 
@@ -24,7 +25,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   public updateTime() {
-    this.timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+    this.timeNow = new Date();
   }
 
 }

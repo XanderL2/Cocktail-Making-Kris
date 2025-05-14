@@ -3,22 +3,62 @@
 @use '../../sass/theme' as *;
 
 .main {
-    display: flex;
-    align-items: center;
+
     padding: 1rem;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 5% 95%;
     @include backgroundImageCover('/images/home.gif');
+
+    &__aside {
+        align-self: center; 
+    }
+
+
+
+    //? Layouts:
+    &__primary {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 0.3rem;
+
+        &--term1 {
+            width: 100%;
+            height: 100%;
+            grid-column: 1;
+            grid-row: 1 / span 2;
+        }
+
+        &--term2 {
+            grid-column: 2;
+        }
+
+        &--term3 {
+            grid-column: 2;
+        }
+
+    }
+
+    // &__primary {
+    //     display: grid;
+    //     grid-template-columns: auto auto;
+    //     grid-template-rows: auto auto;
+    // }
+
+
+    // &__secondary {}
+
+
 }
 
 .menus {
-
     padding-top: 1.5rem;
     @include flexContainerColumn(start, center, 0.7rem);
 
     &__wrapper {
         position: relative;
     }
-
 }
 
 .nav {

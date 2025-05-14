@@ -1,56 +1,133 @@
-<div class="main">
+<main class="main">
 
-    <app-polybar [showProfile]="showProfile" [onClickProfile]="onClickProfile">
+    <aside class="main__aside">
+        <app-polybar [showProfile]="showProfile" [onClickProfile]="onClickProfile">
 
-        <div class="modalProfile">
-            <app-profile [user]="user"/>
-        </div>
-
-        <div class="menus">
-
-            <div class="menus__wrapper">
-                <button (click)="onClickSearch()" [ariaLabel]="'search'">
-                    <mat-icon svgIcon="search" class="icon icon-pointer icon-sm"></mat-icon>
-                </button>
-                <app-modal [showModal]="showSearchMenu">
-                    <app-searcher [InputName]="'Search Cocktail'" [icon]="'explorer'" SearchTitle="Search your cocktail:">
-                        <app-button [ariaLabel]="'search'" [size]="'xl'"  [buttonType]="'secondary'">Search</app-button>   
-                        <app-button [ariaLabel]="'search'" [size]="'xl'" [onClick]="onApplySearchFilter" >Apply Filters</app-button>   
-                    </app-searcher>
-                </app-modal>
+            <div class="modalProfile">
+                <app-profile [user]="user" />
             </div>
 
+            <div class="menus">
 
-             <div class="menus__wrapper">
-                <button (click)="onClickFilter()">
-                    <mat-icon svgIcon="filters" class="icon icon-pointer"></mat-icon>
-                </button>
-                <app-modal [showModal]="showFilterMenu">
-                    <h1>Filter</h1>
-                </app-modal>
+                <div class="menus__wrapper">
+                    <button (click)="onClickSearch()" [ariaLabel]="'search'">
+                        <mat-icon svgIcon="search" class="icon icon-pointer icon-sm"></mat-icon>
+                    </button>
+                    <app-modal [showModal]="showSearchMenu">
+                        <app-searcher [InputName]="'Search Cocktail'" [icon]="'explorer'"
+                            SearchTitle="Search your cocktail:">
+                            <app-button [ariaLabel]="'search'" [size]="'xl'"
+                                [buttonType]="'secondary'">Search</app-button>
+                            <app-button [ariaLabel]="'search'" [size]="'xl'" [onClick]="onApplySearchFilter">Apply
+                                Filters</app-button>
+                        </app-searcher>
+                    </app-modal>
+                </div>
+
+
+                <div class="menus__wrapper">
+                    <button (click)="onClickFilter()">
+                        <mat-icon svgIcon="filters" class="icon icon-pointer"></mat-icon>
+                    </button>
+                    <app-modal [showModal]="showFilterMenu">
+                        <h1>Filter</h1>
+                    </app-modal>
+
+                </div>
+
+                <div class="menus__wrapper">
+                    <button (click)="onClickMusicPlayer()">
+                        <mat-icon svgIcon="music" class="icon icon-pointer icon-sm"></mat-icon>
+                    </button>
+
+                    <app-modal [showModal]="showMusicPlayer">
+                        <app-music-player [Songs]="Songs"></app-music-player>
+                    </app-modal>
+
+                </div>
 
             </div>
 
-            <div class="menus__wrapper">
-                <button (click)="onClickMusicPlayer()">
-                    <mat-icon svgIcon="music" class="icon icon-pointer icon-sm"></mat-icon>
-                </button>
-
-                <app-modal [showModal]="showMusicPlayer">
-                    <app-music-player [Songs]="Songs"></app-music-player>
-                </app-modal>
-
+            <div class="nav">
+                <mat-icon svgIcon="logout" class="icon"></mat-icon>
+                <mat-icon svgIcon="pacman" class="icon icon-xsm"></mat-icon>
+                <mat-icon svgIcon="config" class="icon"></mat-icon>
             </div>
+        </app-polybar>
+
+
+    </aside>
+
+    <article [class]="'main__' + layoutType">
+
+        <div [class]="'main__' + layoutType + `--term1`">
+            <app-term>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <h1>Term1</h1>
+            </app-term>
+        </div>
+
+
+        <div [class]="'main__' + layoutType + `--term2`">
+            <app-term>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <h1>Term </h1>
+            </app-term>
+
 
         </div>
 
-        <div class="nav">
-            <mat-icon svgIcon="logout" class="icon"></mat-icon>
-            <mat-icon svgIcon="pacman" class="icon icon-xsm"></mat-icon>
-            <mat-icon svgIcon="config" class="icon"></mat-icon>
+        <div [class]="'main__' + layoutType + `--term3`">
+            <app-term>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <p>Random</p>
+                <h1>Term 3</h1>
+            </app-term>
         </div>
-    </app-polybar>
-
-</div>
 
 
+
+
+    </article>
+
+    <!-- <router-outlet></router-outlet> -->
+</main>

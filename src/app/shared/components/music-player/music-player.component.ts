@@ -79,6 +79,10 @@ export class MusicPlayerComponent {
 
   }
 
+  onEndSong(): void {
+    this.nextSong();  
+  }
+
 
   //? Getters 
   public get CurrentSong(): Song {
