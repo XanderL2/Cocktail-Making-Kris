@@ -1,0 +1,7 @@
+<div class="drinkList">
+    @for (drink of drinks; track drink.id) {
+        <app-drink [drink]="drink" [onClickDrink]="onCLickDrink"></app-drink>
+    }@empty {
+        <p>Not drinks</p>
+    }
+</div>

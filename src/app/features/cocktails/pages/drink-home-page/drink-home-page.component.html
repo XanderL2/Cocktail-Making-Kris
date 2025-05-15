@@ -20,18 +20,17 @@
         } 
 
         @if (!(dataStateDrink?.loading) && (dataStateDrink?.data) ) {
-
-            @for (drink of dataStateDrink?.data; track drink.id) {
-                <p>{{drink.id}}</p>
-            }@empty {
-                <p>Not found</p>
-            }
+            <app-drink-list [drinks]="dataStateDrink?.data ?? []"></app-drink-list>
         }
 
     </app-term>
 
     <app-term>
-        <h2>Receta</h2>
+
+        @if (currentDrink) {
+            <app-recipe [drink]="currentDrink"></app-recipe>
+        }
+
     </app-term>
 
 </article>

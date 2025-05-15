@@ -1,0 +1,31 @@
+@use '../../../../shared/sass/theme' as *;
+@use '../../../../shared/sass/generic' as *;
+
+.drink {
+
+    @include flexContainerColumn();
+    border-radius: 5px;
+    background-color: $darkBlue;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+
+    &__image {
+    }
+
+
+    &__info {
+
+        @include flexContainerRow();
+
+        &--name {
+            color: $darkGray;
+        }
+
+        &--price {
+            color: $green;
+        }
+
+    }
+    
+}

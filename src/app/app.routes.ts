@@ -26,7 +26,13 @@ export const routes: Routes = [
                 path: '', 
                 component: DrinkHomePageComponent,
                 data: { layoutType: 'secondary'}
+            },
+            { 
+                path: 'create', 
+                component: DrinkHomePageComponent,
+                data: { layoutType: 'secondary'}
             }
+
         ]
     },
 

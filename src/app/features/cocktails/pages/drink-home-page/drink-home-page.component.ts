@@ -5,10 +5,13 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { DrinkService } from '../../services/Drink.service';
 import { DataState } from 'src/app/core/models/Data';
+import { DrinkItemComponent } from "../../components/drink-item/drink.component";
+import { DrinkListComponent } from "../../components/drink-list/drink-list.component";
+import { RecipeComponent } from "../../components/recipe/recipe.component";
 
 @Component({
   selector: 'app-drink-home-page',
-  imports: [TermComponent, CommonModule],
+  imports: [TermComponent, CommonModule, DrinkItemComponent, DrinkListComponent, RecipeComponent],
   templateUrl: './drink-home-page.component.html',
   styleUrl: './drink-home-page.component.scss'
 })

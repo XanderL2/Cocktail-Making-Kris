@@ -27,7 +27,7 @@
 //* Primary
 @mixin PrimaryLayout() {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: minmax(auto, 600px) minmax(auto, 1200px);
     grid-template-rows: auto auto;
     gap: 0.3rem;
 }

@@ -1,0 +1,14 @@
+@use '../../../../shared/sass/theme' as *;
+@use '../../../../shared/sass/generic' as *;
+
+
+.drinkList {
+
+    @include flexContainerRow(center, center, 2rem);
+    
+    overflow: scroll;
+    height: 100%;
+
+    
+
+}
