@@ -1,11 +1,11 @@
-@mixin flexContainerRow($justify: center, $align: center, $gap: unset){
+@mixin flexContainerRow($justify: center, $align: center, $gap: unset) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
     gap: $gap;
 }
 
-@mixin flexContainerColumn($justify: center, $align: center, $gap: unset){
+@mixin flexContainerColumn($justify: center, $align: center, $gap: unset) {
     display: flex;
     flex-direction: column;
     justify-content: $justify;
@@ -13,10 +13,34 @@
     gap: $gap;
 }
 
-@mixin backgroundImageCover($imageUrl){
+@mixin backgroundImageCover($imageUrl) {
 
     background-image: url($imageUrl);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+
+//? For Layouts 
+
+//* Primary
+@mixin PrimaryLayout() {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 0.3rem;
+}
+
+
+//* Secondary
+
+
+
+
+
+@mixin Term($row: 1, $column: 1){
+    grid-column: $column;
+    grid-row: $column;
+}
+

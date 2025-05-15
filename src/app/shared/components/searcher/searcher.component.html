@@ -1,8 +1,7 @@
 <div class="searcher">
 
-    <form class="searcher__main">
+    <form class="searcher__main" (submit)="onSearch($event)">
         <h4>{{SearchTitle}}</h4>
-        <app-input [ariaLabel]="InputName" [name]="InputName" [icon]="icon"></app-input>
         <ng-content></ng-content>
 
     </form>

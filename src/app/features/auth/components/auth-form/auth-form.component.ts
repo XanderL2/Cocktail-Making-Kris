@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-auth-form',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './auth-form.component.html',
   styleUrl: './auth-form.component.scss'
 })

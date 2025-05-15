@@ -1,51 +1,51 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { environment } from '@environments/environment';
-import { catchError, map, Observable, throwError } from 'rxjs';
-import { DrinkAdapter } from '../adapters/Drink.adapter';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Drink } from '../models/Drink';
+import { DrinkAPIService } from './DrinkAPI.service';
 import { Filters } from '../models/Filters';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class DrinkService {
 
-  private http: HttpClient = inject(HttpClient);
-  private cocktailURL: string = environment.API_URL + "/api/drinks";
+  //? Services:
+  private DrinkApi = inject(DrinkAPIService);
 
-  constructor() { }
+  //? Observables:
+  private $currentDrink = new BehaviorSubject<Drink | null>(null);
+  private $relatedDrinks = new BehaviorSubject<Drink[]>([]);
+  private $dataOrigin = new BehaviorSubject<'default'| 'filter'>('default');
 
 
-  public getAll(): Observable<Drink[]> {
-    return this.http.get<Observable<Drink>>(this.cocktailURL)
-      .pipe(
-        map((drinks: any) => DrinkAdapter.parseDrinks(drinks))
-      );
+  //? Methods:
+  public GetRelatedDrinks(filter: Filters): void {
+
+    const fetch$ = this.$dataOrigin.value === 'filter'
+                  ? this.DrinkApi.searchWithFilters(filter)
+                  : this.DrinkApi.getAll();
+
+    fetch$.subscribe((drinks: Drink[]) => {
+      this.$relatedDrinks.next(drinks);
+      if(this.$dataOrigin.value === 'default') this.$currentDrink.next(drinks[0]);
+    });
   }
 
+  //? Getters and setters:
+  public get relatedDrinks() : Observable<Drink[]>{
+    return this.$relatedDrinks.asObservable();
+  }
 
-  //? Filters:
-  public searchWithFilters(filters: Filters): Observable<Drink[]> {
+  public set dataOrigin(newValue: 'default' | 'filter' ) {
+    this.$dataOrigin.next(newValue);
+  }
 
-    let queryParams = new HttpParams();
+  public get currentDrink() : Observable<Drink | null>{
+    return this.$currentDrink.asObservable();
+  }
 
-    if (filters.name) queryParams = queryParams.set('name', filters.name);
-    if (filters.flavour) queryParams = queryParams.set('flavour', filters.flavour);
-    if (filters.alcoholic !== undefined) queryParams = queryParams.set('alcoholic', String(filters.alcoholic));
-    if (filters.type) queryParams = queryParams.set('type', filters.type);
-    if (filters.type !== undefined) queryParams = queryParams.set('orderByPrice', String(filters.orderAscendingByPrice));
-
-    const finalUrl = `${this.cocktailURL}?${queryParams.toString()}`;
-    console.log('Final URL:', finalUrl); // 👈 Aquí la ves completa
-
-    return this.http.get(this.cocktailURL, { params: queryParams })
-      .pipe(
-        map((drinks: any) =>{
-          return DrinkAdapter.parseDrinks(drinks)
-        } )
-      );
+  public set currentDrink(newDrink : Drink) {
+    this.$currentDrink.next(newDrink);
   }
 
 

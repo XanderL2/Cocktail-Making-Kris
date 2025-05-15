@@ -15,46 +15,10 @@
     }
 
 
-    &__article {
-        background-color: red;
+    &__section {
         width: 100%;
         height: 100%;
     }
-
-    // //? Layouts:
-    // &__primary {
-    //     display: grid;
-    //     grid-template-columns: auto auto;
-    //     grid-template-rows: auto auto;
-    //     gap: 0.3rem;
-
-    //     &--term1 {
-    //         width: 100%;
-    //         height: 100%;
-    //         grid-column: 1;
-    //         grid-row: 1 / span 2;
-    //     }
-
-    //     &--term2 {
-    //         grid-column: 2;
-    //     }
-
-    //     &--term3 {
-    //         grid-column: 2;
-    //     }
-
-    // }
-
-    // &__primary {
-    //     display: grid;
-    //     grid-template-columns: auto auto;
-    //     grid-template-rows: auto auto;
-    // }
-
-
-    // &__secondary {}
-
-
 }
 
 .menus {

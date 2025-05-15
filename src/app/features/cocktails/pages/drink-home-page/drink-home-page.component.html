@@ -1,1 +1,27 @@
-<p>drink-home-page works!</p>
+<article class="terms">
+
+    <app-term [row]="'1 / span 2'" [column]="'1'" >
+        
+        @let currentDrink = $currentDrink | async;
+
+        <p>
+            {{currentDrink?.name}}
+        </p>
+
+
+    </app-term>
+
+    <app-term>
+        @for (drink of $relatedDrinks | async; track drink.id) {
+            <p>{{drink.name}}</p>
+        }
+
+        <h1>Bebidas relacionadas</h1>
+
+    </app-term>
+
+    <app-term>
+        <h2>Receta</h2>
+    </app-term>
+
+</article>
