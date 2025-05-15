@@ -1,7 +1,13 @@
 <div class="drinkList">
     @for (drink of drinks; track drink.id) {
         <app-drink [drink]="drink" [onClickDrink]="onCLickDrink"></app-drink>
+
     }@empty {
-        <p>Not drinks</p>
+
+        <div class="drinkList__notfound">
+            <h3>Drink not found! <mat-icon class="icon-medium">disabled_by_default</mat-icon></h3>
+
+            <app-button [ariaLabel]="'Remove filters'" [buttonType]="'danger'" [onClick]="removeFilters">Remove Filters  </app-button>
+        </div>
     }
 </div>

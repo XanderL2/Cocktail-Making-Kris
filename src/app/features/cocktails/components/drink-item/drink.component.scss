@@ -9,23 +9,38 @@
     width: 200px;
     height: 300px;
     cursor: pointer;
+    border: 2px solid $pink;
+    transition: all 0.5s;
 
     &__image {
+        height: 60%
     }
-
 
     &__info {
 
-        @include flexContainerRow();
+        @include flexContainerColumn();
 
         &--name {
-            color: $darkGray;
+            color: $dark;
         }
 
         &--price {
+            font-size: 1.5rem;
             color: $green;
         }
 
     }
+
+    &:hover {
+        background-color: $blue;
+        border-color: $green;
+    }
+
+    &:active{
+        background-color: $lightGray;
+        border-color: $green;
+    }
+
+
     
 }

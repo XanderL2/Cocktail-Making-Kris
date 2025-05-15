@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Drink } from '../../models/Drink';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-drink',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './drink.component.html',
   styleUrl: './drink.component.scss'
 })

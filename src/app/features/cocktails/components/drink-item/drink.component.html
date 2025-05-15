@@ -4,7 +4,7 @@
 
     <div class="drink__info">
         <h4 class="drink__info--name">{{drink.name}}</h4>
-        <p class="drink__info--price">{{drink.price}}</p>
+        <p class="drink__info--price">{{drink.price | currency:'USD':'symbol'}}</p>
     </div>
 
 </div>

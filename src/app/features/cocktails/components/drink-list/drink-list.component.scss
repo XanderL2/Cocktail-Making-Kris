@@ -1,14 +1,25 @@
 @use '../../../../shared/sass/theme' as *;
 @use '../../../../shared/sass/generic' as *;
+@use '../../../../shared/sass/icons' as *;
 
+h3 {
+    color: $red;
+}
 
 .drinkList {
 
-    @include flexContainerRow(center, center, 2rem);
-    
-    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
     height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1rem;
 
-    
+    &__notfound {
+        margin: 0 auto;
 
+    }
 }
