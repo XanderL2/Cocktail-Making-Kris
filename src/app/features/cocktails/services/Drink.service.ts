@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Drink } from '../models/Drink';
 import { DrinkAPIService } from './DrinkAPI.service';
 import { Filters } from '../models/Filters';
+import { DataState } from '../../../core/models/Data';
 
 @Injectable({
   providedIn: 'root'
@@ -14,25 +15,28 @@ export class DrinkService {
 
   //? Observables:
   private $currentDrink = new BehaviorSubject<Drink | null>(null);
-  private $relatedDrinks = new BehaviorSubject<Drink[]>([]);
   private $dataOrigin = new BehaviorSubject<'default'| 'filter'>('default');
+  private $relatedDrinks = new BehaviorSubject<DataState<Drink[]>>({ loading: false, data: [] });
 
 
   //? Methods:
   public GetRelatedDrinks(filter: Filters): void {
+
+    this.$relatedDrinks.next({ loading: true });
 
     const fetch$ = this.$dataOrigin.value === 'filter'
                   ? this.DrinkApi.searchWithFilters(filter)
                   : this.DrinkApi.getAll();
 
     fetch$.subscribe((drinks: Drink[]) => {
-      this.$relatedDrinks.next(drinks);
+      this.$relatedDrinks.next({loading: false, data: drinks});
       if(this.$dataOrigin.value === 'default') this.$currentDrink.next(drinks[0]);
     });
   }
 
+
   //? Getters and setters:
-  public get relatedDrinks() : Observable<Drink[]>{
+  public get relatedDrinks() : Observable<DataState<Drink[]>>{
     return this.$relatedDrinks.asObservable();
   }
 

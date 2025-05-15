@@ -4,6 +4,7 @@ import { Drink } from '../../models/Drink';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { DrinkService } from '../../services/Drink.service';
+import { DataState } from 'src/app/core/models/Data';
 
 @Component({
   selector: 'app-drink-home-page',
@@ -15,7 +16,7 @@ export class DrinkHomePageComponent implements OnInit {
   
   private drinks: DrinkService = inject(DrinkService);
   public $currentDrink!: Observable<Drink | null>; 
-  public $relatedDrinks!: Observable<Drink[]>; 
+  public $relatedDrinks!: Observable<DataState<Drink[]>>; 
 
 
   constructor(){

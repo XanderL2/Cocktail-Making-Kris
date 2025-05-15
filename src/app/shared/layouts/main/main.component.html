@@ -14,7 +14,7 @@
                     </button>
                     <app-modal [showModal]="showSearchMenu">
                         <app-searcher  SearchTitle="Search your cocktail:" [onSearch]="onSearch">
-                            <app-input [ariaLabel]="'Search'" [name]="'Search'" [icon]="'explorer'" (getValue)="getDrinkName($event)"></app-input>
+                            <app-input [ariaLabel]="'Search'" [name]="'Search'" [icon]="'explorer'" (getValue)="getDrinkName($event)" [required]="true"></app-input>
                             <app-button [ariaLabel]="'search'" [size]="'xl'"
                                 [buttonType]="'secondary'">Search</app-button>
                             <app-button [ariaLabel]="'search'" [size]="'xl'" [onClick]="onApplySearchFilter">Apply

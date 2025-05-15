@@ -1,7 +1,7 @@
 <article class="terms">
 
-    <app-term [row]="'1 / span 2'" [column]="'1'" >
-        
+    <app-term [row]="'1 / span 2'" [column]="'1'">
+
         @let currentDrink = $currentDrink | async;
 
         <p>
@@ -12,11 +12,21 @@
     </app-term>
 
     <app-term>
-        @for (drink of $relatedDrinks | async; track drink.id) {
-            <p>{{drink.name}}</p>
-        }
 
-        <h1>Bebidas relacionadas</h1>
+        @let dataStateDrink = ($relatedDrinks | async); 
+
+        @if ( dataStateDrink?.loading) {
+            <h1>Loading...</h1>
+        } 
+
+        @if (!(dataStateDrink?.loading) && (dataStateDrink?.data) ) {
+
+            @for (drink of dataStateDrink?.data; track drink.id) {
+                <p>{{drink.id}}</p>
+            }@empty {
+                <p>Not found</p>
+            }
+        }
 
     </app-term>
 
