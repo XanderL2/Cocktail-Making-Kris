@@ -2,7 +2,6 @@
 
     <aside class="main__aside">
         <app-polybar [showProfile]="showProfile" [onClickProfile]="onClickProfile">
-
             <div class="modalProfile">
                 <app-profile [user]="user" />
             </div>
@@ -54,80 +53,9 @@
                 <mat-icon svgIcon="config" class="icon"></mat-icon>
             </div>
         </app-polybar>
-
-
     </aside>
 
-    <article [class]="'main__' + layoutType">
-
-        <div [class]="'main__' + layoutType + `--term1`">
-            <app-term>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <h1>Term1</h1>
-            </app-term>
-        </div>
-
-
-        <div [class]="'main__' + layoutType + `--term2`">
-            <app-term>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <h1>Term </h1>
-            </app-term>
-
-
-        </div>
-
-        <div [class]="'main__' + layoutType + `--term3`">
-            <app-term>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <p>Random</p>
-                <h1>Term 3</h1>
-            </app-term>
-        </div>
-
-
-
-
+    <article class="main__article">
+        <router-outlet/>
     </article>
-
-    <!-- <router-outlet></router-outlet> -->
 </main>

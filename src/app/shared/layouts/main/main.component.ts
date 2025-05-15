@@ -4,12 +4,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { ModalComponent } from "../../components/modal/modal.component";
 import { ProfileComponent } from "../../../features/users/components/profile/profile.component";
 import { User } from '../../../features/users/models/User';
-import { SearcherComponent } from "../../components/searcher/searcher.component";
+import { SearcherComponent } from '../../components/searcher/searcher.component';
 import { ButtonComponent } from "../../components/button/button.component";
 import { MusicPlayerComponent } from "../../components/music-player/music-player.component";
 import { Song } from '../../components/music-player/models/Song';
 import { Songs } from '../../components/music-player/models/Songs';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { TermComponent } from "../../components/term/term.component";
 import { DrinkService } from 'src/app/features/cocktails/services/Drink.service';
 
@@ -22,38 +22,35 @@ import { DrinkService } from 'src/app/features/cocktails/services/Drink.service'
 })
 export class MainComponent implements OnInit{
 
+
+  //? Services:
   private drinks: DrinkService = inject(DrinkService);
-
-  ngOnInit(): void {
-    this.drinks.searchWithFilters({
-      type: "Classic",
-      orderAscendingByPrice: false
-    }).subscribe((data) => console.log(data));
-  }
+  private route: ActivatedRoute = inject(ActivatedRoute);
 
 
-
-
-
-
-  //? Properties
+  //? Modals properties:
   public showProfile: boolean = false;
-
   public showSearchMenu: boolean = false;
-
   public showFilterMenu: boolean = false;
-
   public Songs: Song[] = Songs;
   public showMusicPlayer: boolean = false;
-
-  public layoutType: 'primary' | 'secondary' = 'primary';
 
   public user: User = {
     profilePhoto: 'https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic_1468962.webp?w=1600&h=900',
     username: 'Kristofatico'
   }
 
-  
+
+
+  ngOnInit(): void {
+
+  }
+
+
+
+
+
+
 
 
 
@@ -97,5 +94,6 @@ export class MainComponent implements OnInit{
     this.showFilterMenu = false; 
     this.showMusicPlayer = false; 
   }
+
 
 }

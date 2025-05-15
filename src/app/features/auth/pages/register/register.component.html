@@ -1,0 +1,32 @@
+<app-auth-form [title]="'Register'">
+
+    <app-input 
+        [name]="'username'" 
+        [ariaLabel]="'username'" 
+        [placeHolder]="'Username'" 
+        [icon]="'person'"
+        [size]="'large'"
+     />
+
+    <app-input 
+        [name]="'username'" 
+        [ariaLabel]="'username'" 
+        [placeHolder]="'Password'" 
+        [icon]="'lock'"
+        [type]="'password'" 
+        [size]="'large'" 
+    />
+
+    <app-button 
+        [ariaLabel]="'Login'" 
+        [size]="'xl'" 
+        [buttonType]="'primary'">Register</app-button>
+
+    <app-button 
+        [ariaLabel]="'Login'" 
+        [size]="'xl'" 
+        [buttonType]="'danger'"
+        [onClick]="navigateToLogin"
+        >Login</app-button>
+
+</app-auth-form>

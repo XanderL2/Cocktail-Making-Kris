@@ -3,8 +3,9 @@ import { Routes } from '@angular/router';
 import { AuthLayoutComponent } from '@shared/layouts/auth-layout/auth-layout.component';
 import { MainComponent } from '@shared/layouts/main/main.component';
 
-import { LoginComponent } from './features/auth/components/login/login.component';
-import { RegisterComponent } from './features/auth/components/register/register.component';
+import { LoginComponent } from './features/auth/pages/login/login.component';
+import { RegisterComponent } from './features/auth/pages/register/register.component';
+import { DrinkHomePageComponent } from './features/cocktails/pages/drink-home-page/drink-home-page.component';
 
 export const routes: Routes = [
     
@@ -18,12 +19,16 @@ export const routes: Routes = [
         ]
     },
     {
-        path: '/drinks',
+        path: 'drinks',
         component: MainComponent,
         children: [
-            { path: '', }
+            { 
+                path: '', 
+                component: DrinkHomePageComponent,
+                data: { layoutType: 'secondary'}
+            }
         ]
-    }
+    },
 
+    { path: '**', redirectTo: '' }
 ];
-
