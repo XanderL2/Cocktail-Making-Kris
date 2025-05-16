@@ -5,7 +5,7 @@
         @let currentDrink = $currentDrink | async;
 
         @if (currentDrink) {
-            <h3>{{currentDrink.name}}</h3>
+            <app-currrent-drink [currentDrink]="currentDrink" />
         }
 
     </app-term>

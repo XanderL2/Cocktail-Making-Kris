@@ -5,11 +5,11 @@
 
     @include flexContainerColumn();
     border-radius: 5px;
-    background-color: $darkBlue;
+    background-color: $darkTerm;
     width: 200px;
     height: 300px;
     cursor: pointer;
-    border: 2px solid $pink;
+    border: 2px solid $orange;
     transition: all 0.5s;
     user-select: none;
     -webkit-user-select: none; 
@@ -24,7 +24,7 @@
         @include flexContainerColumn();
 
         &--name {
-            color: $dark;
+            color: $white;
         }
 
         &--price {

@@ -8,10 +8,11 @@ import { DataState } from 'src/app/core/models/Data';
 import { DrinkItemComponent } from "../../components/drink-item/drink.component";
 import { DrinkListComponent } from "../../components/drink-list/drink-list.component";
 import { RecipeComponent } from "../../components/recipe/recipe.component";
+import { CurrrentDrinkComponent } from "../../components/currrent-drink/currrent-drink.component";
 
 @Component({
   selector: 'app-drink-home-page',
-  imports: [TermComponent, CommonModule, DrinkItemComponent, DrinkListComponent, RecipeComponent],
+  imports: [TermComponent, CommonModule, DrinkItemComponent, DrinkListComponent, RecipeComponent, CurrrentDrinkComponent],
   templateUrl: './drink-home-page.component.html',
   styleUrl: './drink-home-page.component.scss'
 })

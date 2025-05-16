@@ -3,10 +3,11 @@ export interface Drink {
   name: string;
   price: number;
   alcoholic: boolean;
-  flavour: string;
+  flavour?: string;
   primaryType: string;
   secondaryType: string;
-  recipe: string;
+  recipe?: string;
+
   adelhyde: number;
   powderedDelta: number;
   bronsonExtract: number;

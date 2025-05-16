@@ -1,0 +1,18 @@
+<div class="currentDrink">
+
+    <img class="currentDrink__img" [src]="currentDrink.filenameFull" [alt]="currentDrink.name">
+
+    <h1 class="currentDrink__titles">
+        <h1 class="currentDrink__titles--primary">{{currentDrink.name}}</h1>
+        <p class="currentDrink__titles--secondary">{{currentDrink.description}}</p>
+    </h1>
+
+    <div class="currentDrink__info">
+        <p>Price: <span>{{currentDrink.price | currency:'USD':'symbol'}}</span></p>
+        <p>Alcoholic: <span class="icon-orange">{{currentDrink.alcoholic ? 'Yes': 'No'}}</span></p>
+        <p>Flavour: <span class="icon-red">{{currentDrink.flavour}}</span></p>
+        <p>Preparation: <span class="icon-pink">{{currentDrink.preparation | titlecase}}</span> </p>
+        <p>Iced: <span class="icon-blue">{{currentDrink.ice ? 'Yes': 'No'}}</span></p>
+        <p>Aged: {{currentDrink.aged ? 'Yes': 'No'}}</p>
+    </div>
+</div>
