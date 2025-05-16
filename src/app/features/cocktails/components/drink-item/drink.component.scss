@@ -11,6 +11,9 @@
     cursor: pointer;
     border: 2px solid $pink;
     transition: all 0.5s;
+    user-select: none;
+    -webkit-user-select: none; 
+    -ms-user-select: none;     
 
     &__image {
         height: 60%
@@ -34,6 +37,7 @@
     &:hover {
         background-color: $blue;
         border-color: $green;
+        scale: 1.1;
     }
 
     &:active{

@@ -1,6 +1,5 @@
 @use '@angular/material' as mat;
 @use './app/shared/sass/theme' as *;
-@import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 html {
   @include mat.theme((
