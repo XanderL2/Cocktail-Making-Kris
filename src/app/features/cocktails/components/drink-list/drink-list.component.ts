@@ -5,10 +5,11 @@ import { DrinkService } from '../../services/Drink.service';
 import { ButtonComponent } from "../../../../shared/components/button/button.component";
 import { MatIconModule } from '@angular/material/icon';
 import { ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-drink-list',
-  imports: [DrinkItemComponent, ButtonComponent, MatIconModule],
+  imports: [DrinkItemComponent, ButtonComponent, MatIconModule, MatIconModule],
   templateUrl: './drink-list.component.html',
   styleUrl: './drink-list.component.scss'
 })
@@ -17,6 +18,7 @@ export class DrinkListComponent implements AfterViewInit {
   @Input({ required: true }) drinks: Drink[] = [];
 
   private drinkService = inject(DrinkService);
+  private router = inject(Router)
 
   @ViewChild('drinkList', { static: true }) drinkListRef!: ElementRef<HTMLDivElement>;
 
@@ -80,4 +82,8 @@ export class DrinkListComponent implements AfterViewInit {
     this.drinkService.GetRelatedDrinks({});
   }
 
+
+  public onClickInCreateButton = () =>  {
+    this.router.navigate(['/create'])
+  }
 }

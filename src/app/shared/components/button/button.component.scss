@@ -9,6 +9,10 @@
     transition: all 0.3s ease-in-out;
     border-radius: 0.5rem;
     color: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 
     //? Types:
     &__primary { 
@@ -22,6 +26,8 @@
     }
 
     &__danger { background-color: $red; }
+
+    &__sucess { background-color: $green;} 
 
     &:disabled {
         background-color: $dark;

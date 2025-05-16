@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
 
   @Input({required: true}) ariaLabel: string = "button"
-  @Input() buttonType: 'primary' | 'secondary' | 'danger' = 'primary';
+  @Input() buttonType: 'primary' | 'secondary' | 'danger' | 'sucess' = 'primary';
   @Input() onClick: (event: Event) => void = () => console.log("Button clicked!"); 
 
   @Input() disabled: boolean = false;
