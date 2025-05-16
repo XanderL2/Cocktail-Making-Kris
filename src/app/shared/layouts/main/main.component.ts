@@ -10,15 +10,14 @@ import { MusicPlayerComponent } from "../../components/music-player/music-player
 import { Song } from '../../components/music-player/models/Song';
 import { Songs } from '../../components/music-player/models/Songs';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from "../../components/input/input.component";
 import { DrinkService } from '../../../features/cocktails/services/Drink.service';
+import { Filters } from 'src/app/features/cocktails/models/Filters';
 
 @Component({
   selector: 'app-main',
-  imports: [PolybarComponent, MatIconModule, ModalComponent, ProfileComponent, SearcherComponent, ButtonComponent, MusicPlayerComponent, RouterOutlet, FormsModule, InputComponent, MatIconModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  imports: [PolybarComponent, MatIconModule, ModalComponent, ProfileComponent, SearcherComponent, ButtonComponent, MusicPlayerComponent, RouterOutlet, FormsModule, InputComponent, MatIconModule, ReactiveFormsModule], templateUrl: './main.component.html', styleUrl: './main.component.scss'
 })
 export class MainComponent {
 
@@ -33,14 +32,31 @@ export class MainComponent {
   public Songs: Song[] = Songs;
   public showMusicPlayer: boolean = false;
 
+  //? Forms properties
+  public drinkName: string = "";
+  public filtersForm: FormGroup;
+
   public user: User = {
     profilePhoto: 'https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic_1468962.webp?w=1600&h=900',
     username: 'Kristofatico'
   }
 
-  //? Searcher:
-  public drinkName: string = "";
 
+  constructor(){
+
+    this.filtersForm = new FormGroup({
+      flavour: new FormControl(""),    
+      type: new FormControl(""),      
+      alcoholic: new FormControl(false), 
+      orderAscendingByPrice: new FormControl(false) 
+    });
+
+  }
+
+
+
+
+  //? Polybar forms Hanlders:
   public onSearch = (e: Event) =>  {
     e.preventDefault();
 
@@ -53,9 +69,28 @@ export class MainComponent {
     this.DrinkService.GetRelatedDrinks({name: this.drinkName});
   }
 
-  public getDrinkName(e: {name: string, value: string}): void {
-    this.drinkName = e.value;
+  public onApplyFilters(): void {
+
+    const formValues: Partial<Filters> = this.filtersForm.value;
+    let filters: Partial<Filters> = {};
+
+
+    // // for (let key in formValues) {
+    // //   if(formValues[key]) filters[key] = formValues[key];  
+    // // }
+
+    // this.DrinkService.dataOrigin = 'filter';
+    // this.DrinkService.GetRelatedDrinks({
+
+    //   flavour: formValues.flavour,
+    //   type: formValues.typeDrink,
+    //   orderAscendingByPrice: formValues.orderByPrice,
+    //   alcoholic: formValues.alcoholic
+    // });
+
   }
+
+
 
 
   //? Polybar Buttons Handlers
@@ -97,6 +132,12 @@ export class MainComponent {
     this.showSearchMenu = false;
     this.showFilterMenu = false;
     this.showMusicPlayer = false;
+  }
+
+
+  //? Outputs controllers:
+  public getDrinkName(e: {name: string, value: string}): void {
+    this.drinkName = e.value;
   }
 
 

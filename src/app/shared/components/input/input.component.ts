@@ -28,11 +28,10 @@ export class InputComponent implements ControlValueAccessor {
   @Input({required: true}) ariaLabel!: string;
   @Input({required: true}) icon!: string;
 
-  @Input() type: string = 'text'; 
+  @Input() type: 'text' | 'checkbox' | 'textArea' | 'password' = 'text'; 
   @Input() required: boolean = false;
   @Input() label!: string; 
   @Input() placeHolder: string = ''; 
-  @Input() textArea: boolean = false;
   @Input() isValidWhen: boolean = false;
   @Input() size: 'large' | 'normal' = "normal"
 
@@ -57,7 +56,8 @@ export class InputComponent implements ControlValueAccessor {
     this.onTouched = fn; 
   }
   setDisabledState?(isDisabled: boolean): void {
-    throw new Error('Method not implemented.');
+    console.log("random");
+    // throw new Error('Method not implemented.');
   }
   
 }

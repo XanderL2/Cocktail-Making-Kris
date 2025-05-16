@@ -7,30 +7,56 @@
 
     <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
 
-    @if (textArea) {
 
-        <textarea 
-            class="input" 
-            name="{{name}}" 
-            [ariaLabel]="ariaLabel"
-            [placeholder]="placeHolder" 
-            [attr.required]="required ? '' : null"
-            [(ngModel)]="value"
-            (ngModelChange)="emitValue()"
-        ></textarea>
 
-    } @else {
+    @switch (type) {
 
-        <input 
-            class="input" 
-            [ngClass]="{ 'input__large': size === 'large' }" 
-            name="{{name}}" 
-            [placeholder]="placeHolder" 
-            [attr.required]="required ? '' : null"
-            [(ngModel)]="value"
-            (ngModelChange)="emitValue()"
-            [type]="type"
-        >
+
+        @case ("password") {
+
+            <input 
+                class="input" 
+                [ngClass]="{ 'input__large': size === 'large' }" 
+                name="{{name}}" 
+                [placeholder]="placeHolder" 
+                [attr.required]="required ? '' : null"
+                [(ngModel)]="value"
+                (ngModelChange)="emitValue()"
+                [type]="'password'"
+            >
+
+        }
+        @case ("textArea") {
+
+            <textarea 
+                class="input" 
+                name="{{name}}" 
+                [ariaLabel]="ariaLabel"
+                [placeholder]="placeHolder" 
+                [attr.required]="required ? '' : null"
+                [(ngModel)]="value"
+                (ngModelChange)="emitValue()"
+            ></textarea>
+ 
+        }
+        @case ('checkbox') {
+
+                                
+
+        }
+        @default {
+            <input 
+                class="input" 
+                [ngClass]="{ 'input__large': size === 'large' }" 
+                name="{{name}}" 
+                [placeholder]="placeHolder" 
+                [attr.required]="required ? '' : null"
+                [(ngModel)]="value"
+                (ngModelChange)="emitValue()"
+                [type]="'text'"
+            >
+        }
+
     }
 
 </div>
