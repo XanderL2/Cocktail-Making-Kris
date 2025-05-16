@@ -31,12 +31,17 @@
 
                     <app-modal [showModal]="showFilterMenu">
 
-                        <form [formGroup]="filtersForm" id="filtersForm" (submit)="onApplyFilters()">
+                        <form class="filterForm" [formGroup]="filtersForm" id="filtersForm" (submit)="onApplyFilters()">
 
-                            <app-input label="flavout" ariaLabel="flavour" [name]="'flavour'" icon="" formControlName="flavour"></app-input>
-                            <app-input label="typedrink" ariaLabel="typeDrink" [name]="'type'" icon="" formControlName="typeDrink"></app-input>
+                            <app-input label="Flavour" ariaLabel="flavour" [name]="'flavour'" icon="local_fire_department" formControlName="flavour"/>
+
+                            <app-input label="Typedrink" ariaLabel="typeDrink" [name]="'typeDrink'" icon="bookmark_add" formControlName="type"/>
                            
-                            <button>Submit</button>
+                            <app-button 
+                                [ariaLabel]="'Apply Filters'" 
+                                [buttonType]="'sucess'" 
+                                [size]="'xl'">Submit <mat-icon class="icon-xsm">category</mat-icon></app-button>
+
                         </form>
 
                     </app-modal>

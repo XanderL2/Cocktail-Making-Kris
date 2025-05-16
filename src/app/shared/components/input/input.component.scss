@@ -2,6 +2,13 @@
 @use '../../sass/transitions' as *;
 @use '../../sass/icons' as *;
 
+.label {
+    font-size: 1.5rem;
+    color: $lightGray;
+    font-weight: bold;
+    
+}
+
 .inputContainer {
 
     padding: 0.5rem 0.7rem;

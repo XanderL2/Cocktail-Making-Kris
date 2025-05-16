@@ -30,6 +30,13 @@
     }
 }
 
+.filterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+    
+}
+
 .nav {
     @include flexContainerColumn(end, center, 0.7rem);
 }
