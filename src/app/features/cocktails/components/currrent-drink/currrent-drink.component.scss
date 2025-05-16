@@ -44,7 +44,9 @@ span {
 
         &--primary {
             animation: ShadowAnimation 1s infinite;
+            text-overflow: ellipsis;
             color: $lightGray;
+            overflow: auto;
         }
 
     }

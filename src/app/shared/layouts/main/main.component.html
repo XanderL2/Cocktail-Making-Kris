@@ -29,7 +29,24 @@
                         <mat-icon svgIcon="filters" class="icon icon-pointer"></mat-icon>
                     </button>
                     <app-modal [showModal]="showFilterMenu">
-                        <h1>Filter</h1>
+
+                        <form id="filtersForm" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <label for="flavour">Sabor:</label>
+                            <input type="text" id="flavour" name="flavour" />
+
+                            <label for="alcoholic">¿Alcoholico?</label>
+                            <input type="checkbox" id="alcoholic" name="alcoholic" />
+
+                            <label for="orderAscendingByPrice">Ordenar por precio ascendente</label>
+                            <input type="checkbox" id="orderAscendingByPrice" name="orderAscendingByPrice" />
+
+                            <label for="type">Tipo:</label>
+                            <input type="text" id="type" name="type" />
+
+                            <button type="submit" style="color: red;">Filtrar</button>
+                            
+                        </form>
+
                     </app-modal>
 
                 </div>
