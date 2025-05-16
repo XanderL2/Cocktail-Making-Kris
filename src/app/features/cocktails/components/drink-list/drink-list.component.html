@@ -1,13 +1,24 @@
-<div #drinkList class="drinkList">
-    @for (drink of drinks; track drink.id) {
-        <app-drink [drink]="drink" [onClickDrink]="onCLickDrink"></app-drink>
+<div  class="drinkList">
 
-    }@empty {
+    <div>
+        <h2 >Related to</h2>
+    </div>
 
-        <div class="drinkList__notfound">
-            <h3>Drink not found! <mat-icon class="icon-medium">disabled_by_default</mat-icon></h3>
 
-            <app-button [ariaLabel]="'Remove filters'" [buttonType]="'danger'" [onClick]="removeFilters">Remove Filters  </app-button>
-        </div>
-    }
+    <div #drinkList class="drinkList__main">
+        @for (drink of drinks; track drink.id) {
+            <app-drink [drink]="drink" [onClickDrink]="onCLickDrink"></app-drink>
+
+        }@empty {
+
+            <div class="drinkList__main--notfound">
+                <h3>Drink not found! <mat-icon class="icon-medium">disabled_by_default</mat-icon></h3>
+                <app-button [ariaLabel]="'Remove filters'" [buttonType]="'danger'" [onClick]="removeFilters">Remove Filters</app-button>
+            </div>
+        }    
+    </div>
+
+    <div>
+        <p>Footer</p>
+    </div>
 </div>
