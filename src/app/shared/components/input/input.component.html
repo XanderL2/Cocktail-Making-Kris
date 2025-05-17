@@ -74,6 +74,22 @@
 
 
      }
+     @case ('file') {
+
+        <div class="inputContainer fileInputContainer">
+            <label for="fileInput" class="switch__label fileInputContainer__label">
+                <mat-icon class="icon-xsm icon-not-clickable icon-white">{{icon}}</mat-icon>
+                {{ariaLabel}} 
+                <mat-icon class="icon-not-clickable icon-white">arrow_circle_up</mat-icon>
+            </label>
+
+            <input id="fileInput" class="fileInput" type="file" accept="image/png">
+            
+        </div>
+
+     }
+
+
      @default {
          @if (label) {
              <label class="label" for="{{name}}">{{label}}</label>

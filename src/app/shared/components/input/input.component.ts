@@ -29,7 +29,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input({required: true}) ariaLabel!: string;
   @Input({required: true}) icon!: string;
 
-  @Input() type: 'text' | 'checkbox' | 'textArea' | 'password' = 'text'; 
+  @Input() type: 'text' | 'checkbox' | 'textArea' | 'password' | "file" = 'text'; 
   @Input() required: boolean = false;
   @Input() label!: string; 
   @Input() placeHolder: string = ''; 

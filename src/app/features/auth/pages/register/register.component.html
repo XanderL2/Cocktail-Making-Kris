@@ -19,6 +19,16 @@
         formControlName="password"
     />
 
+    <app-input 
+        [name]="'Profile Picture'" 
+        [ariaLabel]="'Profile Picture'" 
+        [placeHolder]="'Profile'" 
+        [icon]="'image'"
+        [type]="'file'" 
+        [size]="'large'" 
+        formControlName="imageFile"
+    />
+
 
     <app-button 
         [ariaLabel]="'Login'" 
@@ -26,6 +36,7 @@
         [buttonType]="'primary'">
         <mat-icon>person_add</mat-icon>
         Register</app-button>
+
 
     <app-button 
         [ariaLabel]="'Login'" 

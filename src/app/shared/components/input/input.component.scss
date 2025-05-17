@@ -54,6 +54,11 @@
     }
 }
 
+
+.fileInput {
+    display: none; /* Oculta el input real */
+}
+
 .switch{
 
     width: 100%;
@@ -76,3 +81,17 @@
     }
 
 }
+
+.fileInputContainer {
+    background-color: $darkGray;
+    cursor: pointer;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    background-color: $pink;
+
+    &__label {
+        cursor: pointer;
+        color: $white;
+    }
+}
+

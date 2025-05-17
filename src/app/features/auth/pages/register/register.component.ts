@@ -20,9 +20,9 @@ export class RegisterComponent {
 
   constructor(){
     this.registerForm = new FormGroup({
-      username: new FormControl(""),
-      password: new FormControl(""),
-      imageFile: new FormControl("")
+      username: new FormControl<string>(""),
+      password: new FormControl<string>(""),
+      imageFile: new FormControl<File | null>(null)
     });
   }
 
@@ -33,7 +33,6 @@ export class RegisterComponent {
 
   public onRegisterUser = (e: Event) => {
     e.preventDefault();
-    console.log(this.registerForm.value);
   }
 
 }
