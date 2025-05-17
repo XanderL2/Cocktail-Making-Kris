@@ -31,15 +31,24 @@
 
                     <app-modal [showModal]="showFilterMenu">
 
-                        <form class="filterForm" [formGroup]="filtersForm" id="filtersForm" (submit)="onApplyFilters()">
+                        <form class="filterForm" [formGroup]="filtersForm" id="filtersForm" (submit)="onApplyFilters($event)">
 
                             <app-input label="Flavour" ariaLabel="flavour" [name]="'flavour'" icon="local_fire_department" formControlName="flavour"/>
 
                             <app-input label="Typedrink" ariaLabel="typeDrink" [name]="'typeDrink'" icon="bookmark_add" formControlName="type"/>
 
-                            <app-input [icon]="'local_bar'" ariaLabel="Alcoholic" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
+                            <div class="filterForm__alcoholic" >
+                                <h4>Alcoholic</h4>
+                                <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="alcoholic">
+                                    <mat-button-toggle [value]="true">Yes</mat-button-toggle>
+                                    <mat-button-toggle [value]="false">No</mat-button-toggle>
+                                    <mat-button-toggle [value]="null">All</mat-button-toggle>
+                                </mat-button-toggle-group>
 
-                            <app-input [icon]="'sort'" ariaLabel="Ascending by price" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
+                            </div>
+
+
+                            <app-input [icon]="'sort'" ariaLabel="Ascending by price" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="orderAscendingByPrice"/>
                            
                             <app-button 
                                 [ariaLabel]="'Apply Filters'" 

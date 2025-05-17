@@ -30,13 +30,19 @@
     }
 }
 
+.nav {@include flexContainerColumn(end, center, 0.5rem)}
+
 .filterForm {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem
-    
-}
+    gap: 1.5rem;
 
-.nav {
-    @include flexContainerColumn(end, center, 0.7rem);
+    &__alcoholic {
+        background-color: #2e3038;
+        padding: 0.5rem;
+        border-radius: 7px;
+        @include flexContainerRow(space-between, center, 0.5rem)
+
+    }
+    
 }

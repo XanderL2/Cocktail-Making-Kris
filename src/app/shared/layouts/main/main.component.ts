@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { PolybarComponent } from "../../components/polybar/polybar.component";
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ModalComponent } from "../../components/modal/modal.component";
 import { ProfileComponent } from "../../../features/users/components/profile/profile.component";
 import { User } from '../../../features/users/models/User';
@@ -14,10 +14,11 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { InputComponent } from "../../components/input/input.component";
 import { DrinkService } from '../../../features/cocktails/services/Drink.service';
 import { Filters } from 'src/app/features/cocktails/models/Filters';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-main',
-  imports: [PolybarComponent, MatIconModule, ModalComponent, ProfileComponent, SearcherComponent, ButtonComponent, MusicPlayerComponent, RouterOutlet, FormsModule, InputComponent, MatIconModule, ReactiveFormsModule], templateUrl: './main.component.html', styleUrl: './main.component.scss'
+  imports: [PolybarComponent, MatIconModule, ModalComponent, ProfileComponent, SearcherComponent, ButtonComponent, MusicPlayerComponent, RouterOutlet, FormsModule, InputComponent, MatIconModule, ReactiveFormsModule, MatButtonToggleModule], templateUrl: './main.component.html', styleUrl: './main.component.scss'
 })
 export class MainComponent {
 
@@ -48,7 +49,7 @@ export class MainComponent {
       flavour: new FormControl(""),    
       type: new FormControl(""),      
       alcoholic: new FormControl(null), 
-      orderAscendingByPrice: new FormControl(null) 
+      orderAscendingByPrice: new FormControl(false) 
     });
 
   }
@@ -69,25 +70,24 @@ export class MainComponent {
     this.DrinkService.GetRelatedDrinks({name: this.drinkName});
   }
 
-  public onApplyFilters = () => {
+  public onApplyFilters = (event: Event) => {
 
+    event.preventDefault();
     const formValues: any = this.filtersForm.value;
     let filters: any = {};
 
+
     for (let key in formValues) {
 
-      const value = formValues[key as keyof Filters];
+      if(formValues[key] === undefined || formValues[key] === "" || formValues[key] === null || key === "orderAscendingByPrice") continue;
+      filters[key] = formValues[key] 
+   }
 
-      if (value !== undefined && value !== null && value !== '') {
-        filters[key as keyof Filters] = value;
-      }
-    }
+   formValues['orderAscendingByPrice'] && (filters['orderAscendingByPrice'] = formValues['orderAscendingByPrice']);
 
 
     this.DrinkService.dataOrigin = 'filter';
     this.DrinkService.GetRelatedDrinks(filters);
-
-
   }
 
 

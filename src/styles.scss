@@ -53,5 +53,19 @@ p {
   font-size: 1rem;
 }
 
+.mat-button-toggle {
 
+
+  &-label-content {
+    color: $skyblue;
+    font-size: 1rem;
+  }
+
+  &-checked {
+    .mat-button-toggle-label-content {
+      color: $ultraDarkBlue;
+    }
+  }
+
+}
 
