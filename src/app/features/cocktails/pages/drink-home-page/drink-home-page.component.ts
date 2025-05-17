@@ -34,11 +34,4 @@ export class DrinkHomePageComponent implements OnInit {
       this.drinks.GetRelatedDrinks({})
   }
 
-
-
-  // ngOnInit(): void {
-  //   this.drinks.getAll().subscribe((data) => console.log(data));
-  // }
-
-
 }

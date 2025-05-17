@@ -22,7 +22,6 @@ p {
         &--ingredient {
             width: 100%;
             padding: 0.5rem;
-            background-color: red;
             border-radius: 5px ;
             background-color: $dark;
             display: flex;
@@ -49,7 +48,7 @@ p {
             }
             &__karmotrine {
                 @include flexContainerRow(start, center, 0.3rem);
-                p { color: $orange}
+                p { color: $skyblue}
             }
 
 

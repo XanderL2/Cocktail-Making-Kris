@@ -6,6 +6,7 @@ import { MainComponent } from '@shared/layouts/main/main.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { RegisterComponent } from './features/auth/pages/register/register.component';
 import { DrinkHomePageComponent } from './features/cocktails/pages/drink-home-page/drink-home-page.component';
+import { CreateDrinkComponent } from './features/cocktails/pages/create-drink/create-drink.component';
 
 export const routes: Routes = [
     
@@ -29,7 +30,7 @@ export const routes: Routes = [
             },
             { 
                 path: 'create', 
-                component: DrinkHomePageComponent,
+                component: CreateDrinkComponent,
                 data: { layoutType: 'secondary'}
             }
 
