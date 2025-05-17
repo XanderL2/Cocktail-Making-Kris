@@ -47,8 +47,8 @@ export class MainComponent {
     this.filtersForm = new FormGroup({
       flavour: new FormControl(""),    
       type: new FormControl(""),      
-      alcoholic: new FormControl(false), 
-      orderAscendingByPrice: new FormControl(false) 
+      alcoholic: new FormControl(null), 
+      orderAscendingByPrice: new FormControl(null) 
     });
 
   }
@@ -69,24 +69,24 @@ export class MainComponent {
     this.DrinkService.GetRelatedDrinks({name: this.drinkName});
   }
 
-  public onApplyFilters(): void {
+  public onApplyFilters = () => {
 
-    const formValues: Partial<Filters> = this.filtersForm.value;
-    let filters: Partial<Filters> = {};
+    const formValues: any = this.filtersForm.value;
+    let filters: any = {};
+
+    for (let key in formValues) {
+
+      const value = formValues[key as keyof Filters];
+
+      if (value !== undefined && value !== null && value !== '') {
+        filters[key as keyof Filters] = value;
+      }
+    }
 
 
-    // // for (let key in formValues) {
-    // //   if(formValues[key]) filters[key] = formValues[key];  
-    // // }
+    this.DrinkService.dataOrigin = 'filter';
+    this.DrinkService.GetRelatedDrinks(filters);
 
-    // this.DrinkService.dataOrigin = 'filter';
-    // this.DrinkService.GetRelatedDrinks({
-
-    //   flavour: formValues.flavour,
-    //   type: formValues.typeDrink,
-    //   orderAscendingByPrice: formValues.orderByPrice,
-    //   alcoholic: formValues.alcoholic
-    // });
 
   }
 

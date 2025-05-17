@@ -20,7 +20,7 @@ export class DrinkService {
 
 
   //? Methods:
-  public GetRelatedDrinks(filter: Filters): void {
+  public GetRelatedDrinks(filter: Filters | Partial<Filters>): void {
 
     this.$relatedDrinks.next({ loading: true });
 

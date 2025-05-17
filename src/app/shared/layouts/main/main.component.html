@@ -37,11 +37,12 @@
 
                             <app-input label="Typedrink" ariaLabel="typeDrink" [name]="'typeDrink'" icon="bookmark_add" formControlName="type"/>
 
-                            <app-input label="Typedrink" ariaLabel="typeDrink" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
+                            <app-input ariaLabel="typeDrink" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
                            
                             <app-button 
                                 [ariaLabel]="'Apply Filters'" 
                                 [buttonType]="'sucess'" 
+                                [onClick]="onApplyFilters"
                                 [size]="'xl'">Apply Filters<mat-icon class="icon-xsm">category</mat-icon></app-button>
 
                         </form>

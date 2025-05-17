@@ -35,7 +35,7 @@ export class DrinkAPIService {
     if (filters.flavour) queryParams = queryParams.set('flavour', filters.flavour);
     if (filters.alcoholic !== undefined) queryParams = queryParams.set('alcoholic', String(filters.alcoholic));
     if (filters.type) queryParams = queryParams.set('type', filters.type);
-    if (filters.type !== undefined) queryParams = queryParams.set('orderByPrice', String(filters.orderAscendingByPrice));
+    if (filters.orderAscendingByPrice !== undefined) queryParams = queryParams.set('orderByPrice', String(filters.orderAscendingByPrice));
 
 
     return this.http.get(this.cocktailURL, { params: queryParams })

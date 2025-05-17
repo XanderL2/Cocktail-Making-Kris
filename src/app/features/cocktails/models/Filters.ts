@@ -2,6 +2,6 @@ export interface Filters {
     name?: string;
     flavour?: string;
     type?: string;
-    alcoholic?: true;
+    alcoholic?: boolean;
     orderAscendingByPrice?: boolean;
 }
