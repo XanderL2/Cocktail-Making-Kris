@@ -1,4 +1,4 @@
-<app-auth-form [title]="'Register'" [groupForm]="registerForm">
+<app-auth-form [title]="'Register'" [formGroup]="registerForm">
 
     <app-input 
         [name]="'username'" 
@@ -6,15 +6,17 @@
         [placeHolder]="'Username'" 
         [icon]="'person'"
         [size]="'large'"
+        formControlName="username"
      />
 
     <app-input 
-        [name]="'username'" 
-        [ariaLabel]="'username'" 
+        [name]="'passowrd'" 
+        [ariaLabel]="'passowrd'" 
         [placeHolder]="'Password'" 
         [icon]="'lock'"
         [type]="'password'" 
         [size]="'large'" 
+        formControlName="password"
     />
 
 

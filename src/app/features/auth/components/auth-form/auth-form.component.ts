@@ -12,6 +12,6 @@ export class AuthFormComponent {
   @Input({required: true}) title!: string;
   @Input() onSubmitAuthForm!: () => void;
 
-  @Input() groupForm!: FormGroup;
+  @Input() formGroup!: FormGroup;
 
 }
