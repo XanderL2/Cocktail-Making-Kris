@@ -10,7 +10,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class AuthFormComponent {
 
   @Input({required: true}) title!: string;
-  @Input() onSubmitAuthForm!: () => void;
+  @Input() onSubmitAuthForm!: (event: Event) => void;
 
   @Input() formGroup!: FormGroup;
 

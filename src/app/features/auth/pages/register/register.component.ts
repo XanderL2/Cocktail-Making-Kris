@@ -31,8 +31,8 @@ export class RegisterComponent {
     this.router.navigate(["/login"]);
   }
 
-  public onRegisterUser = () => {
-
+  public onRegisterUser = (e: Event) => {
+    e.preventDefault();
     console.log(this.registerForm.value);
   }
 
