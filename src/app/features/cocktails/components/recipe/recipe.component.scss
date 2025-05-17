@@ -1,0 +1,64 @@
+@use '../../../../shared/sass/theme' as *;
+@use '../../../../shared/sass/generic' as *;
+@use '../../../../shared/sass/animations' as *;
+
+p {
+    font-size: 1.5rem;
+    color: $lightGray;
+    animation: ShadowAnimation 1s infinite;
+}
+
+.recipe {
+
+    width: 100%;
+    height: 100%;
+    @include flexContainerColumn(center, start, 1rem);
+    overflow: scroll;
+
+    &__ingredients {
+        width: 100%;
+        @include flexContainerColumn(center, start, 0.5rem);
+
+        &--ingredient {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: red;
+            border-radius: 5px ;
+            background-color: $dark;
+            display: flex;
+            justify-content: space-between;
+
+            &__adelhyde {
+                @include flexContainerRow(start, center, 0.3rem);
+                p { color: $red}
+
+            }
+
+            &__delta {
+                @include flexContainerRow(start, center, 0.3rem);
+                p { color: $blue}
+            }
+
+            &__bronson {
+                @include flexContainerRow(start, center, 0.3rem);
+                p { color: $yellow}
+            }
+            &__flamergide {
+                @include flexContainerRow(start, center, 0.3rem);
+                p { color: $green}
+            }
+            &__karmotrine {
+                @include flexContainerRow(start, center, 0.3rem);
+                p { color: $orange}
+            }
+
+
+        }
+    }
+
+
+    &__text {
+        font-size: 1.7rem;
+    }
+
+}

@@ -1,5 +1,84 @@
 <div class="recipe">
 
-    
+    <div class="recipe__ingredients">
+
+        <div class="recipe__ingredients--ingredient">
+
+            <p>Adelhyde: </p>
+
+            <div class="recipe__ingredients--ingredient__adelhyde">
+
+                @if (drink.adelhyde > 0) {
+                    @for (item of (drink.adelhyde | toRange); track $index) {
+                        <p>▊</p>
+                    }
+                }
+
+            </div>
+
+
+        </div>
+
+        <div class="recipe__ingredients--ingredient">
+            <p>Pwd Delta:</p>
+
+            <div class="recipe__ingredients--ingredient__delta">
+
+                @if (drink.powderedDelta) {
+                    @for (item of (drink.powderedDelta| toRange); track $index) {
+                        <p>▊</p>
+                    }
+                }
+            </div>
+
+        </div>
+
+        <div class="recipe__ingredients--ingredient">
+            <p>Bronson Ext:</p>
+
+            <div class="recipe__ingredients--ingredient__bronson">
+
+                @if (drink.bronsonExtract) {
+                    @for (item of (drink.bronsonExtract| toRange); track $index) {
+                        <p>▊</p>
+                    }
+                }
+            </div>
+
+        </div>
+
+        <div class="recipe__ingredients--ingredient">
+            <p>Flamergide:</p>
+
+            <div class="recipe__ingredients--ingredient__flamergide">
+
+                @if (drink.flanergide) {
+                    @for (item of (drink.flanergide| toRange); track $index) {
+                        <p>▊</p>
+                    }
+                }
+            </div>
+
+
+        </div>
+
+        <div class="recipe__ingredients--ingredient">
+
+            <p>Karmotrine:</p>
+
+            <div class="recipe__ingredients--ingredient__karmotrine">
+
+                @if (drink.karmotrine) {
+                    @for (item of (drink.karmotrine| toRange); track $index) {
+                        <p>▊</p>
+                    }
+                }
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="recipe__text">Recipe: {{drink.recipe}}</p>
 
 </div>
