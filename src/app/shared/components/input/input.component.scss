@@ -1,6 +1,7 @@
 @use '../../sass/theme' as *;
 @use '../../sass/transitions' as *;
 @use '../../sass/icons' as *;
+@use '../../sass/generic' as *;
 
 .label {
     font-size: 1.5rem;
@@ -53,6 +54,25 @@
     }
 }
 
-.switch {
+.switch{
+
+    width: 100%;
+    @include flexContainerRow(space-between, center);
+    padding: 0.5rem;
+    background-color: #2e3038;
+    border-radius: 7px;
+
+    &__label {
+        font-size: 1.5rem;
+        color: $lightGray;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+    }
+
+    &__toggle {
+        scale: 0.7;
+    }
 
 }

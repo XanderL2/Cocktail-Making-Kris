@@ -1,80 +1,102 @@
-@if (label) {
-    <label class="label" for="{{name}}">{{label}}</label>
-}
+
+
+ @switch (type) {
+
+
+     @case ("password") {
+
+         @if (label) {
+             <label class="label" for="{{name}}">{{label}}</label>
+         }
+
+
+         <div class="inputContainer">
+
+             <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
 
 
 
-    @switch (type) {
+             <input 
+                 class="input" 
+                 [ngClass]="{ 'input__large': size === 'large' }" 
+                 name="{{name}}" 
+                 [placeholder]="placeHolder" 
+                 [attr.required]="required ? '' : null"
+                 [(ngModel)]="value"
+                 (ngModelChange)="emitValue()"
+                 [type]="'password'"
+
+             >
+
+         </div>
+
+     }
+     @case ("textArea") {
+         @if (label) {
+             <label class="label" for="{{name}}">{{label}}</label>
+         }
 
 
-        @case ("password") {
-            <div class="inputContainer">
+         <div class="inputContainer">
 
-                <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
-
+             <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
 
 
-                <input 
-                    class="input" 
-                    [ngClass]="{ 'input__large': size === 'large' }" 
-                    name="{{name}}" 
-                    [placeholder]="placeHolder" 
-                    [attr.required]="required ? '' : null"
-                    [(ngModel)]="value"
-                    (ngModelChange)="emitValue()"
-                    [type]="'password'"
-
-                >
-
-            </div>
-
-        }
-        @case ("textArea") {
-            <div class="inputContainer">
-
-                <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
+             <textarea 
+                 class="input" 
+                 name="{{name}}" 
+                 [ariaLabel]="ariaLabel"
+                 [placeholder]="placeHolder" 
+                 [attr.required]="required ? '' : null"
+                 [(ngModel)]="value"
+                 (ngModelChange)="emitValue()"
+             ></textarea>
+ 
+         </div>
 
 
-                <textarea 
-                    class="input" 
-                    name="{{name}}" 
-                    [ariaLabel]="ariaLabel"
-                    [placeholder]="placeHolder" 
-                    [attr.required]="required ? '' : null"
-                    [(ngModel)]="value"
-                    (ngModelChange)="emitValue()"
-                ></textarea>
-    
-            </div>
+     }
+     @case ('checkbox') {
 
 
-        }
-        @case ('checkbox') {
+        <div class="switch">
+            @if (ariaLabel) {
+                <label class="switch__label" for=""><mat-icon class="icon-xsm icon-not-clickable icon-white">{{icon}}</mat-icon>{{ariaLabel}}</label>
+            }
 
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
+            <mat-slide-toggle  
+                [(ngModel)]="value"
+                (change)="emitValue()" 
+                class="switch__toggle" color="accent"/>
+        </div>
+        
 
-        }
-        @default {
-            <div class="inputContainer">
 
-                <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
 
-                <input 
-                    class="input" 
-                    [ngClass]="{ 'input__large': size === 'large' }" 
-                    name="{{name}}" 
-                    [placeholder]="placeHolder" 
-                    [attr.required]="required ? '' : null"
-                    [(ngModel)]="value"
-                    (ngModelChange)="emitValue()"
-                    [type]="'text'"
-                >
-            </div>
-        }
+     }
+     @default {
+         @if (label) {
+             <label class="label" for="{{name}}">{{label}}</label>
+         }
 
-    }
+
+         <div class="inputContainer">
+
+             <mat-icon class="icon-xsm icon-not-clickable">{{icon}}</mat-icon>
+
+             <input 
+                 class="input" 
+                 [ngClass]="{ 'input__large': size === 'large' }" 
+                 name="{{name}}" 
+                 [placeholder]="placeHolder" 
+                 [attr.required]="required ? '' : null"
+                 [(ngModel)]="value"
+                 (ngModelChange)="emitValue()"
+                 [type]="'text'"
+             >
+         </div>
+     }
+
+ }
 
 

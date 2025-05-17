@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { forwardRef } from '@angular/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @Component({
   selector: 'app-input',
-  imports: [ FormsModule, MatIconModule, CommonModule ],
+  imports: [ FormsModule, MatIconModule, CommonModule, MatSlideToggleModule],
   templateUrl: './input.component.html',
   providers: [
     {
@@ -36,7 +37,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() size: 'large' | 'normal' = "normal"
 
 
-  public value: string = "";
+  public value: any = "";
   @Output() getValue= new EventEmitter<{name: string, value: string}>();
 
   public emitValue() : void{
@@ -55,9 +56,6 @@ export class InputComponent implements ControlValueAccessor {
   registerOnTouched(fn: any): void {
     this.onTouched = fn; 
   }
-  setDisabledState?(isDisabled: boolean): void {
-    console.log("random");
-    // throw new Error('Method not implemented.');
-  }
+  setDisabledState?(isDisabled: boolean): void {}
   
 }

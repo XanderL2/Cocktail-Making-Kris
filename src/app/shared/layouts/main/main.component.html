@@ -37,7 +37,9 @@
 
                             <app-input label="Typedrink" ariaLabel="typeDrink" [name]="'typeDrink'" icon="bookmark_add" formControlName="type"/>
 
-                            <app-input ariaLabel="typeDrink" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
+                            <app-input [icon]="'local_bar'" ariaLabel="Alcoholic" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
+
+                            <app-input [icon]="'sort'" ariaLabel="Ascending by price" [name]="'typeDrink'" [type]="'checkbox'" icon="" formControlName="type"/>
                            
                             <app-button 
                                 [ariaLabel]="'Apply Filters'" 
