@@ -31,4 +31,9 @@ export class RegisterComponent {
     this.router.navigate(["/login"]);
   }
 
+  public onRegisterUser = () => {
+
+    console.log(this.registerForm.value);
+  }
+
 }
