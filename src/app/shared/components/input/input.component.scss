@@ -83,15 +83,19 @@
 }
 
 .fileInputContainer {
-    background-color: $darkGray;
     cursor: pointer;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
-    background-color: $pink;
+    background-color: #ecbccb;
+    transform: scale 0.05s;
 
     &__label {
         cursor: pointer;
         color: $white;
+    }
+
+    &:hover {
+        scale: 1.05;
     }
 }
 
