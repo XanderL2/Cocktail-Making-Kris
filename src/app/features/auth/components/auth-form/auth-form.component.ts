@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-auth-form',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './auth-form.component.html',
   styleUrl: './auth-form.component.scss'
 })
@@ -11,5 +11,7 @@ export class AuthFormComponent {
 
   @Input({required: true}) title!: string;
   @Input() onSubmitAuthForm!: () => void;
+
+  @Input() groupForm!: FormGroup;
 
 }

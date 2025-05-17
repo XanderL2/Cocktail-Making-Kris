@@ -13,7 +13,6 @@ import { RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from "../../components/input/input.component";
 import { DrinkService } from '../../../features/cocktails/services/Drink.service';
-import { Filters } from 'src/app/features/cocktails/models/Filters';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @Component({
