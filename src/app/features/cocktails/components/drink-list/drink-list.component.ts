@@ -84,6 +84,6 @@ export class DrinkListComponent implements AfterViewInit {
 
 
   public onClickInCreateButton = () =>  {
-    this.router.navigate(['/create'])
+    this.router.navigate(['/drinks/create'])
   }
 }

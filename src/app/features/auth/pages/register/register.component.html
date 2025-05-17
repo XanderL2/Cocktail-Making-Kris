@@ -17,16 +17,25 @@
         [size]="'large'" 
     />
 
+
     <app-button 
         [ariaLabel]="'Login'" 
         [size]="'xl'" 
-        [buttonType]="'primary'">Register</app-button>
+        [buttonType]="'primary'">
+        <mat-icon>person_add</mat-icon>
+        Register</app-button>
 
     <app-button 
         [ariaLabel]="'Login'" 
         [size]="'xl'" 
         [buttonType]="'danger'"
         [onClick]="navigateToLogin"
-        >Login</app-button>
+        >
+        <mat-icon>login</mat-icon>
+
+        Login</app-button>
+
+    
+
 
 </app-auth-form>

@@ -3,10 +3,11 @@ import { InputComponent } from "../../../../shared/components/input/input.compon
 import { ButtonComponent } from "../../../../shared/components/button/button.component";
 import { AuthFormComponent } from "../../components/auth-form/auth-form.component";
 import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register',
-  imports: [InputComponent, ButtonComponent, AuthFormComponent],
+  imports: [InputComponent, ButtonComponent, AuthFormComponent, MatIconModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
