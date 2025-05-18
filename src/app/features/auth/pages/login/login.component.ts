@@ -4,6 +4,8 @@ import { ButtonComponent } from "../../../../shared/components/button/button.com
 import { AuthFormComponent } from "../../components/auth-form/auth-form.component";
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,11 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class LoginComponent {
 
   private router: Router = inject(Router);
+  private authService = inject(AuthService);
+
   public loginForm: FormGroup;
+  public loginSuccess = false;
+  public messageError = "";
 
 
   constructor(){
@@ -31,6 +37,18 @@ export class LoginComponent {
 
   onSubmitAuthForm = (e: Event) => {
     e.preventDefault();
+
+    const username = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
+
+    this.authService.loginUser(username, password)
+      .subscribe({
+        next: (response: HttpResponse<any>) => this.loginSuccess = true,
+        error: (resp: HttpErrorResponse) => {
+          this.messageError = resp.error.error;
+          this.loginSuccess = false;
+        }
+      }) 
   }
 
 }

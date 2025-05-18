@@ -31,4 +31,12 @@
         [onClick]="navigateToRegister"
         >Register</app-button>
 
+    @if (loginSuccess) {
+        <p class="message message__success">Success</p>
+    }
+
+    @if(messageError && loginSuccess === false) {
+        <p class="message message__error">{{messageError}}</p>
+    }
+
 </app-auth-form>

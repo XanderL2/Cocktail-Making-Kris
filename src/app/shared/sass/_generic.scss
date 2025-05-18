@@ -1,3 +1,5 @@
+@use './theme' as *;
+
 @mixin flexContainerRow($justify: center, $align: center, $gap: unset) {
     display: flex;
     justify-content: $justify;
@@ -33,14 +35,28 @@
 }
 
 
-//* Secondary
-
-
-
-
-
 @mixin Term($row: 1, $column: 1){
     grid-column: $column;
     grid-row: $column;
+}
+
+.message {
+
+    padding: 1rem;
+    background-color: $white;
+    font-size: 1rem;
+
+    &__error{
+        color: $red;
+        border-radius: 5px;
+        border: 2px solid $red;
+    }
+
+    &__success{
+        color: $green;
+        border-radius: 5px;
+        border: 2px solid $green;
+    }
+
 }
 

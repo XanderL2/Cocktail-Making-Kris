@@ -29,6 +29,9 @@ export class AuthService {
   }
 
 
-
+  public loginUser(username: string, password: string): Observable<any> {
+    const body = { username, password }
+    return this.http.post(this.LOGIN_ENDPOINT, body);
+  }
 
 }
