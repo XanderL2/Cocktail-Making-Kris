@@ -9,11 +9,12 @@ import { ButtonComponent } from "../../components/button/button.component";
 import { MusicPlayerComponent } from "../../components/music-player/music-player.component";
 import { Song } from '../../components/music-player/models/Song';
 import { Songs } from '../../components/music-player/models/Songs';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from "../../components/input/input.component";
 import { DrinkService } from '../../../features/cocktails/services/Drink.service';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { AuthService } from 'src/app/features/auth/services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -24,6 +25,8 @@ export class MainComponent {
 
   //? Services:
   private DrinkService = inject(DrinkService);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
   //? Modals properties:
   public showProfile: boolean = false;
@@ -121,6 +124,11 @@ export class MainComponent {
     e.preventDefault();
     this.showSearchMenu = false;
     this.showFilterMenu = true;
+  }
+
+  public onLogout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
 

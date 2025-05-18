@@ -76,9 +76,8 @@
             </div>
 
             <div class="nav">
-                <a routerLink><mat-icon svgIcon="logout" class="icon"></mat-icon></a>
-                <a href=""><mat-icon svgIcon="pacman" class="icon icon-xsm"></mat-icon></a> 
-                <a href=""><mat-icon svgIcon="config" class="icon"></mat-icon></a> 
+                <button (click)="onLogout()" aria-label="logout"><mat-icon svgIcon="logout" class="icon"></mat-icon></button>
+                <a href="https://www.youtube.com/watch?v=ffbF2u3gmzE"><mat-icon svgIcon="pacman" class="icon icon-xsm"></mat-icon></a> 
             </div>
         </app-polybar>
     </aside>
