@@ -49,19 +49,20 @@
 
         Login</app-button>
 
-    <div style="background-color: brown;">
+    
+    <div>
         @for (error of getErrors('username'); track $index) {
-            <p>{{error}}</p>
+            <p class="message message__error">{{error}}</p>
         }
 
         @for (error of getErrors('password'); track $index) {
-            <p>{{error}}</p>
+            <p class="message message__error">{{error}}</p>
         }
 
         @for (error of getErrors('imageFile'); track $index) {
-            <p>{{error}}</p>
+            <p class="message message__error">{{error}}</p>
         }
-
     </div>
     
+
 </app-auth-form>

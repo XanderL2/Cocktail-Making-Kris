@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../../../core/models/User';
-import { HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +21,8 @@ export class RegisterComponent {
   private AuthService = inject(AuthService);
 
   public registerForm: FormGroup; 
+  public registerSucces: boolean | null = null;
+  public registerError: string = "";
 
 
   constructor(){
@@ -45,6 +47,9 @@ export class RegisterComponent {
       profilePhoto: this.registerForm.value?.imageFile
     }
 
+    if(this.registerForm.get('imageFile')?.hasError('required')){
+      this.registerForm.get('imageFile')?.markAsTouched()
+    }
 
     if(this.registerForm.invalid){
       console.log("Invalid Form")
@@ -52,12 +57,14 @@ export class RegisterComponent {
     }
 
     this.AuthService.registerUser(user)
-      .subscribe((response: HttpResponse<any>) => {
-        console.log(response)
-      }
+      .subscribe({
+        next: (response: HttpResponse<any>) => this.registerSucces = true,
+        error: (error: HttpErrorResponse) => {
+          this.registerError = error.error;          
+          this.registerSucces = false;
+        }
 
-      
-      );
+      });
   }
 
 
@@ -67,8 +74,9 @@ export class RegisterComponent {
     if (!control || !control.errors || !control.touched) return [];
     
     const errors: string[] = [];
-    if (control.errors['required']) errors.push(`${controlName} es obligatorio.`);
-    if (control.errors['minlength']) errors.push(`${controlName} debe tener al menos ${control.errors['minlength'].requiredLength} caracteres.`);
+
+    if (control.errors['required']) errors.push(`${controlName} is required.`);
+    if (control.errors['minlength']) errors.push(`${controlName} must be at least ${control.errors['minlength'].requiredLength} characters long.`);
 
     return errors;
   }

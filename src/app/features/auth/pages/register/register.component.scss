@@ -1,2 +1,22 @@
+@use '../../../../shared/sass/theme' as *;
 
+.message{
+
+    padding: 1rem;
+    background-color: $white;
+    font-size: 1rem;
+
+    &__error{
+        color: $red;
+        border-radius: 5px;
+        border: 2px solid $red;
+    }
+
+    &__success{
+        color: $green;
+        border-radius: 5px;
+        border: 2px solid $green;
+    }
+
+}
 
