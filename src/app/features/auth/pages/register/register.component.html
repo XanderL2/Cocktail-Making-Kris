@@ -63,6 +63,11 @@
             <p class="message message__error">{{error}}</p>
         }
     </div>
+
+    @if (registerSuccess) {
+        <p class="message message__success">Register success!</p>
+    }
+
     
 
 </app-auth-form>

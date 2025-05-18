@@ -21,7 +21,7 @@ export class RegisterComponent {
   private AuthService = inject(AuthService);
 
   public registerForm: FormGroup; 
-  public registerSucces: boolean | null = null;
+  public registerSuccess: boolean | null = null;
   public registerError: string = "";
 
 
@@ -58,10 +58,10 @@ export class RegisterComponent {
 
     this.AuthService.registerUser(user)
       .subscribe({
-        next: (response: HttpResponse<any>) => this.registerSucces = true,
+        next: (response: HttpResponse<any>) => this.registerSuccess= true,
         error: (error: HttpErrorResponse) => {
           this.registerError = error.error;          
-          this.registerSucces = false;
+          this.registerSuccess= false;
         }
 
       });
