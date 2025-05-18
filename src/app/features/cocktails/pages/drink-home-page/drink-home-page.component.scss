@@ -11,7 +11,7 @@
 }
 
 
-@include screenDesktop(sm) {
+@include screenDesktop(xl) {
     .terms {
         display: flex;
         flex-direction: column;
