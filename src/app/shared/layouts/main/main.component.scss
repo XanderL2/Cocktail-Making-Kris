@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 5% 95%;
     overflow: scroll;
-    @include backgroundImageCover('/images/krisfuk.png');
+    @include backgroundImageCover('/Cocktail-Making-Kris/images/krisfuk.png');
 
     &__aside {
         align-self: center; 
