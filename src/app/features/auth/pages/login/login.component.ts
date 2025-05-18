@@ -45,7 +45,8 @@ export class LoginComponent {
       .subscribe({
         next: (response: any) =>{
           this.loginSuccess = true
-          localStorage.setItem("token", response.token)
+          localStorage.setItem("token", response.token);
+          this.router.navigate(['/drinks']);
         },
         error: (resp: HttpErrorResponse) => {
           this.messageError = resp.error.error;
