@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@environments/environment';
 import { map, Observable } from 'rxjs';
-import { User } from '../../core/models/User';
+import { User } from '../../../core/models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,7 @@ export class AuthService {
 
     return this.http.post(this.REGISTER_ENDPOINT, formData);
   }
+
 
 
 

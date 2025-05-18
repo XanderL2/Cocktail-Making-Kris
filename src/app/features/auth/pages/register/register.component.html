@@ -48,7 +48,20 @@
 
         Login</app-button>
 
+    <div style="background-color: brown;">
+        @for (error of getErrors('username'); track $index) {
+            <p>{{error}}</p>
+        }
+
+        @for (error of getErrors('password'); track $index) {
+            <p>{{error}}</p>
+        }
+
+        @for (error of getErrors('imageFile'); track $index) {
+            <p>{{error}}</p>
+        }
+
+
+    </div>
     
-
-
 </app-auth-form>

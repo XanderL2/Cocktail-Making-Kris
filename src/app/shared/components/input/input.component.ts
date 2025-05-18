@@ -35,7 +35,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeHolder: string = ''; 
   @Input() isValidWhen: boolean = false;
   @Input() size: 'large' | 'normal' = "normal"
-
+  @Input() click!: () => void
 
   public value: any = "";
   @Output() getValue= new EventEmitter<{name: string, value: string}>();
@@ -65,8 +65,11 @@ export class InputComponent implements ControlValueAccessor {
       this.value = file;
       this.onChange(file);
       this.onTouched();
+    } else {
+      this.value = null;
+      this.onChange(null);
+      this.onTouched();
     }
-    
   }
 
 }
