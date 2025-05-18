@@ -73,4 +73,6 @@ export class RegisterComponent {
     return errors;
   }
 
+  onClickInputFile = () => this.registerForm.get('imageFile')?.markAsTouched();
+
 }

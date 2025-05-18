@@ -26,6 +26,7 @@
         [icon]="'image'"
         [type]="'file'" 
         [size]="'large'" 
+        [click]="onClickInputFile"
         formControlName="imageFile"
     />
 
@@ -60,7 +61,6 @@
         @for (error of getErrors('imageFile'); track $index) {
             <p>{{error}}</p>
         }
-
 
     </div>
     
