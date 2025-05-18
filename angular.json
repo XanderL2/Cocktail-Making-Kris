@@ -39,7 +39,6 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/Cocktail-Making-Kris/",
               "budgets": [
                 {
                   "type": "initial",
