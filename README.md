@@ -64,6 +64,10 @@ La aplicación utiliza el sistema de rutas de Angular para gestionar la navegaci
 - Las rutas bajo `/drinks` utilizan un layout principal y requieren autenticación (`authGuard`).
 
 
+## Responsive:
+![enter image description here](https://raw.githubusercontent.com/XanderL2/Cocktail-Making-Kris/refs/heads/main/docs/responsive.png)
+
+
 ## Puesta en producción
 
 El proyecto está desplegado en GitHub Pages (gh-pages), lo que permite acceder a la aplicación de forma pública y gratuita desde cualquier dispositivo. Puedes ver la aplicación funcionando en:
