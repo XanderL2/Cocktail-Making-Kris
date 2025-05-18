@@ -83,7 +83,13 @@
                 <mat-icon class="icon-not-clickable icon-white">arrow_circle_up</mat-icon>
             </label>
 
-            <input id="fileInput" class="fileInput" type="file" accept="image/png">
+            <input 
+                id="fileInput" 
+                class="fileInput" 
+                type="file" 
+                accept="image/png" 
+                (change)="onFileChange($event)">
+
             
         </div>
 

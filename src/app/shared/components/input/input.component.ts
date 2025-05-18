@@ -57,5 +57,16 @@ export class InputComponent implements ControlValueAccessor {
     this.onTouched = fn; 
   }
   setDisabledState?(isDisabled: boolean): void {}
-  
+
+  onFileChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input?.files?.length) {
+      const file = input.files[0];
+      this.value = file;
+      this.onChange(file);
+      this.onTouched();
+    }
+    
+  }
+
 }
