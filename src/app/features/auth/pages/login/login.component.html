@@ -1,11 +1,13 @@
-<app-auth-form [title]="'Login'" [formGroup]="loginForm">
+<app-auth-form [title]="'Login'" [formGroup]="loginForm" [onSubmitAuthForm]="onSubmitAuthForm">
 
     <app-input 
         [name]="'username'" 
         [ariaLabel]="'username'" 
         [placeHolder]="'Username'" 
         [icon]="'person'"
-        [size]="'large'" />
+        [size]="'large'" 
+        formControlName="username"
+    />
 
     <app-input 
         [name]="'username'" 
@@ -13,7 +15,9 @@
         [placeHolder]="'Password'" 
         [icon]="'lock'"
         [type]="'password'" 
-        [size]="'large'" />
+        [size]="'large'" 
+        formControlName="password"
+    />
 
     <app-button 
         [ariaLabel]="'Login'" 

@@ -29,4 +29,8 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
 
+  onSubmitAuthForm = (e: Event) => {
+    e.preventDefault();
+  }
+
 }
