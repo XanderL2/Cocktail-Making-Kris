@@ -43,7 +43,10 @@ export class LoginComponent {
 
     this.authService.loginUser(username, password)
       .subscribe({
-        next: (response: HttpResponse<any>) => this.loginSuccess = true,
+        next: (response: any) =>{
+          this.loginSuccess = true
+          localStorage.setItem("token", response.token)
+        },
         error: (resp: HttpErrorResponse) => {
           this.messageError = resp.error.error;
           this.loginSuccess = false;

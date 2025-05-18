@@ -34,4 +34,12 @@ export class AuthService {
     return this.http.post(this.LOGIN_ENDPOINT, body);
   }
 
+  public isAuthenticated(): boolean {
+    return !!localStorage.getItem('token'); 
+  }
+
+  public logout(): void {
+    localStorage.removeItem('token');
+  }
+
 }
