@@ -1,14 +1,15 @@
 @use '../../sass/generic' as *;
 @use '../../sass/icons' as *;
 @use '../../sass/theme' as *;
+@use '../../sass/resposive' as *;
 
 .main {
 
     padding: 1rem;
-    height: 100vh;
     display: grid;
     grid-template-columns: 5% 95%;
-    @include backgroundImageCover('/Cocktail-Making-Kris/images/krisfuk.png');
+    overflow: scroll;
+    @include backgroundImageCover('/images/krisfuk.png');
 
     &__aside {
         align-self: center; 
@@ -45,4 +46,39 @@
 
     }
     
+}
+
+@include screenDesktop(sm) {
+
+    .main {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        gap: 1rem;
+        overflow: hidden;
+
+
+        &__aside {
+            width: 100%;
+            align-self: start;
+        }
+    }
+
+    .menus {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+
 }

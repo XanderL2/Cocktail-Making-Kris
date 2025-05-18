@@ -1,4 +1,5 @@
 @use '../../sass/theme' as *;
+@use '../../sass/resposive' as *;
 
 .modal {
 
@@ -22,3 +23,15 @@
         visibility: visible;
     }
 }
+
+
+
+@include screenDesktop(sm) {
+
+    .modal {
+        position: fixed;
+        left: 1rem;
+        top: 5rem;
+    }
+}
+

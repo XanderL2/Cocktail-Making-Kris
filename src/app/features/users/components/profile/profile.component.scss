@@ -1,6 +1,8 @@
 @use '../../../../shared/sass/theme' as *;
 @use '../../../../shared/sass/generic' as *;
 @use '../../../../shared/sass/icons' as *;
+@use '../../../../shared/sass/resposive' as *;
+
 
 
 p {
@@ -100,3 +102,19 @@ p {
 
 
 }
+
+
+// @include screenDesktop(sm) {
+
+//     .main {
+//         display: flex;
+//         flex-direction: column;
+//         padding: 1rem;
+
+//         &__aside {
+//             align-self: start;
+//         }
+//     }
+
+// }
+
