@@ -16,9 +16,35 @@ html {
 @font-face {
   font-family: VT323;
   src: url("/fonts/VT323-Regular.ttf");
+
 }
 
+/* Scrollbar global pequeño, oscuro y agradable */
+::-webkit-scrollbar {
+  width: 6px;
+  background: #181c24;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #232837;
+  border-radius: 6px;
+  min-height: 20px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e3347;
+}
+
+::-webkit-scrollbar-corner {
+  background: #181c24;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #232837 #181c24;
+}
 * {
   padding: 0;
   margin: 0;
