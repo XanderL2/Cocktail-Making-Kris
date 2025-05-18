@@ -7,6 +7,7 @@ import { LoginComponent } from './features/auth/pages/login/login.component';
 import { RegisterComponent } from './features/auth/pages/register/register.component';
 import { DrinkHomePageComponent } from './features/cocktails/pages/drink-home-page/drink-home-page.component';
 import { CreateDrinkComponent } from './features/cocktails/pages/create-drink/create-drink.component';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
     
@@ -26,7 +27,8 @@ export const routes: Routes = [
             { 
                 path: '', 
                 component: DrinkHomePageComponent,
-                data: { layoutType: 'secondary'}
+                data: { layoutType: 'secondary'},
+                canActivate: [authGuard]
             },
             { 
                 path: 'create', 
