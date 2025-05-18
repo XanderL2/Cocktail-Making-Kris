@@ -33,6 +33,7 @@ export class RegisterComponent {
 
   public onRegisterUser = (e: Event) => {
     e.preventDefault();
+    console.log(this.registerForm.value);
     console.log("On register user");
   }
 

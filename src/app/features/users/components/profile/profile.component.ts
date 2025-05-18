@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { User } from '../../models/User';
+import { User } from '../../../../core/models/User';
 import { MatIconModule } from '@angular/material/icon';
 import { ZeroIntPipe } from '../../../../shared/pipes/zero-int.pipe';
 

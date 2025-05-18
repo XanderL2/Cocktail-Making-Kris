@@ -4,7 +4,7 @@ import { Drink } from '../../models/Drink';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { DrinkService } from '../../services/Drink.service';
-import { DataState } from 'src/app/core/models/Data';
+import { DataState } from '../../../../core/models/Data';
 import { DrinkItemComponent } from "../../components/drink-item/drink.component";
 import { DrinkListComponent } from "../../components/drink-list/drink-list.component";
 import { RecipeComponent } from "../../components/recipe/recipe.component";

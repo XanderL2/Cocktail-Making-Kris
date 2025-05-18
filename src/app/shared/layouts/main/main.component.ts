@@ -3,7 +3,7 @@ import { PolybarComponent } from "../../components/polybar/polybar.component";
 import { MatIconModule } from '@angular/material/icon';
 import { ModalComponent } from "../../components/modal/modal.component";
 import { ProfileComponent } from "../../../features/users/components/profile/profile.component";
-import { User } from '../../../features/users/models/User';
+import { User } from '../../../core/models/User';
 import { SearcherComponent } from '../../components/searcher/searcher.component';
 import { ButtonComponent } from "../../components/button/button.component";
 import { MusicPlayerComponent } from "../../components/music-player/music-player.component";
@@ -37,7 +37,7 @@ export class MainComponent {
   public filtersForm: FormGroup;
 
   public user: User = {
-    profilePhoto: 'https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic_1468962.webp?w=1600&h=900',
+    profilePath: 'https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic_1468962.webp?w=1600&h=900',
     username: 'Kristofatico'
   }
 
